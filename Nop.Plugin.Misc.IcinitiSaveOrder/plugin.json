@@ -1,0 +1,11 @@
+﻿{
+  "Group": "Misc",
+  "FriendlyName": "Iciniti - Save Order Details Plugin",
+  "SystemName": "Misc.IcinitiSaveOrder",
+  "Version": "1.1",
+  "SupportedVersions": [ "4.20" ],
+  "Author": "ICINITI Corporation, nopCommerce team",
+  "DisplayOrder": 1,
+  "FileName": "Nop.Plugin.Misc.IcinitiSaveOrder.dll",
+  "Description": "This plugin allows completed order details to flow into ICINITI Customer Sage 300 environments. For support, please e-mail us or visit our website at support@iciniti.com and https://www.iciniti.com respectively. Thank you for choosing ICINITI!"
+}

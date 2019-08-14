@@ -1,0 +1,127 @@
+﻿@model ConfigurationModel
+
+@using Nop.Plugin.Misc.IcinitiSaveOrder
+@using Nop.Plugin.Misc.IcinitiSaveOrder.Models
+
+@{
+    Layout = "_ConfigurePlugin";
+}
+
+@await Component.InvokeAsync("StoreScopeConfiguration")
+
+<form asp-controller="IcinitiSaveOrder" asp-action="Configure" method="post">
+    <div class="content">
+        <div class="form-horizontal">
+            <nop-panels id="avalara-panels">
+                <nop-panel asp-name="configuration" asp-icon="fa fa-info" asp-title="@T("Plugins.Misc.IcinitiSaveOrder.Configuration")" asp-hide-block-attribute-name="@IcinitiSaveOrderDefaults.HideGeneralBlock" asp-hide="@Model.HideGeneralBlock" asp-advanced="false">
+                    <div class="panel-group">
+                        <div class="panel panel-default">
+                            <div class="panel-body">
+                                <div class="form-group">
+                                    <div class="col-md-8">
+                                        <table class="table">
+                                            <tbody>
+                                                <tr>
+                                                    <td width="1%">
+                                                        <ul class="list-unstyled" style="margin-left:20px;margin-right:20px;">
+                                                            <li>
+                                                                <img src="@Url.Content("~/Plugins/Misc.IcinitiSaveOrder/logo.png")" width="219" height="58" style="margin-top:10px;margin-right:10px;margin-bottom:10px;" />
+                                                            </li>
+                                                            <li class="small">&nbsp;</li>
+                                                            <li>
+                                                                291 King Street, Suite 710 <br />
+                                                                London, Ontario, Canada <br />
+                                                                N6B 1R8
+                                                            </li>
+                                                        </ul>
+                                                    </td>
+                                                    <td>
+                                                        <ul class="list-unstyled">
+                                                            <li>&nbsp;</li>
+                                                            <li><span class="fa fa-globe mr-1" style="width:20px;"></span><a href="https://www.iciniti.com" class="text-primary" target="_blank">https://www.iciniti.com</a></li>
+                                                            <li><span class="fa fa-envelope mr-1" style="width:20px;"></span><a href="mailto:support@iciniti.com">E-Mail Support</a> </li>
+                                                            <li><span class="fa fa-group mr-1" style="width:20px;"></span><a href="mailto:sales@iciniti.com">E-Mail Sales</a></li>
+                                                            <li><span class="fa fa-life-ring mr-1" style="width:20px;"></span><a href="https://www.iciniti.com/ic-support" target="_blank">Create a Ticket</a></li>
+                                                            <li><span class="fa fa-pencil mr-1" style="width:20px;"></span><a href="https://www.iciniti.com/ic-contact" target="_blank">Contact Us</a></li>
+                                                            <li><span class="fa fa-phone mr-1" style="width:20px;"></span>1-866-ICINITI (424-6484) x 1</li>
+                                                            <li>&nbsp;</li>
+                                                        </ul>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                                <p>
+                                    This plugin is one part of an overall Sage 300 ERP integration. <br />
+                                    Developed by ICINITI Corporation, it assists in the flowing of completed information (A customer has completed their order and landed on the Checkout/Completed view) through the cloud (ICINITI APIs) and into a customers Sage 300&trade; system via an ICINITI Order Reader Service component. <br />
+                                    For help or more information regarding this plugin, please visit us at <a href="https://www.iciniti.com" target="_blank">https://www.iciniti.com</a> or drop us an e-mail at <a href="mailto:sales@iciniti.com">sales@iciniti.com</a> for further assistance! <br />
+                                    Thank you for choosing ICINITI!<br />
+                                </p>
+                                <div class="form-group">
+                                    <div class="col-md-3">
+                                        <nop-override-store-checkbox asp-for="ApiUrl_OverrideForStore" asp-input="ApiUrl" asp-store-scope="@Model.ActiveStoreScopeConfiguration" />
+                                        <nop-label asp-for="ApiUrl" />
+                                    </div>
+                                    <div class="col-md-9">
+                                        <nop-editor asp-for="ApiUrl" asp-required="true" />
+                                        <span asp-validation-for="ApiUrl"></span>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-md-3">
+                                        <nop-override-store-checkbox asp-for="LicenseKey_OverrideForStore" asp-input="LicenseKey" asp-store-scope="@Model.ActiveStoreScopeConfiguration" />
+                                        <nop-label asp-for="LicenseKey" />
+                                    </div>
+                                    <div class="col-md-9">
+                                        <nop-editor asp-for="LicenseKey" asp-required="true" asp-value="@Model.LicenseKey" />
+                                        <span asp-validation-for="LicenseKey"></span>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-md-3">
+                                        <nop-override-store-checkbox asp-for="CompanyName_OverrideForStore" asp-input="CompanyName" asp-store-scope="@Model.ActiveStoreScopeConfiguration" />
+                                        <nop-label asp-for="CompanyName" />
+                                    </div>
+                                    <div class="col-md-9">
+                                        <nop-editor asp-for="CompanyName" asp-required="true" />
+                                        <span asp-validation-for="CompanyName"></span>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-md-3">
+                                        <nop-override-store-checkbox asp-for="ContactName_OverrideForStore" asp-input="ContactName" asp-store-scope="@Model.ActiveStoreScopeConfiguration" />
+                                        <nop-label asp-for="ContactName" />
+                                    </div>
+                                    <div class="col-md-9">
+                                        <nop-editor asp-for="ContactName" asp-required="true" />
+                                        <span asp-validation-for="ContactName"></span>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-md-9 col-md-offset-3">
+                                        <div class="input-group input-group-short">
+                                            <div class="input-group-text">
+                                                <button type="submit" name="save" class="btn btn-primary">
+                                                    @T("Admin.Common.Save")
+                                                </button>
+                                            </div>
+                                            @if (Model.IsConfigured)
+                                            {
+                                                <div class="input-group-btn">
+                                                    <button type="submit" name="test" class="btn btn-info">
+                                                        @T("Plugins.Misc.IcinitiSaveOrder.Test")
+                                                    </button>
+                                                </div>
+                                            }
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </nop-panel>
+            </nop-panels>
+        </div>
+    </div>
+</form>
