@@ -2,9 +2,9 @@
 using Nop.Core.Configuration;
 using Nop.Core.Infrastructure;
 using Nop.Core.Infrastructure.DependencyManagement;
-using Nop.Plugin.Misc.IcinitiSaveOrder.Services;
+using Nop.Plugin.Misc.ConligoSaveOrder.Services;
 
-namespace Nop.Plugin.Misc.IcinitiSaveOrder.Infrastructure
+namespace Nop.Plugin.Misc.ConligoSaveOrder.Infrastructure
 {
     /// <summary>
     /// Dependency registrar
@@ -19,8 +19,8 @@ namespace Nop.Plugin.Misc.IcinitiSaveOrder.Infrastructure
         /// <param name="config">Config</param>
         public virtual void Register(ContainerBuilder builder, ITypeFinder typeFinder, NopConfig config)
         {
-            //register Iciniti Service
-            builder.RegisterType<IcinitiService>().AsSelf().InstancePerLifetimeScope();
+            //register Conligo Service
+            builder.RegisterType<ConligoService>().AsSelf().InstancePerLifetimeScope();
         }
 
         /// <summary>

@@ -7,27 +7,27 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace IcinitiOrderService
+namespace ConligoOrderService
 {
     using System.Runtime.Serialization;
     
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "1.0.0.1")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="APIOrder", Namespace="http://schemas.datacontract.org/2004/07/Iciniti.Suite.WebAPI")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="APIOrder", Namespace="http://schemas.datacontract.org/2004/07/Conligo.Suite.WebAPI")]
     public partial class APIOrder : object
     {
         
-        private IcinitiOrderService.APICustomer CustomerField;
+        private ConligoOrderService.APICustomer CustomerField;
         
-        private System.Collections.Generic.List<IcinitiOrderService.APIDetail> DetailsField;
+        private System.Collections.Generic.List<ConligoOrderService.APIDetail> DetailsField;
         
-        private IcinitiOrderService.APIOrderHeader HeaderField;
+        private ConligoOrderService.APIOrderHeader HeaderField;
         
-        private IcinitiOrderService.APIAddress ShipToField;
+        private ConligoOrderService.APIAddress ShipToField;
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public IcinitiOrderService.APICustomer Customer
+        public ConligoOrderService.APICustomer Customer
         {
             get
             {
@@ -40,7 +40,7 @@ namespace IcinitiOrderService
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Collections.Generic.List<IcinitiOrderService.APIDetail> Details
+        public System.Collections.Generic.List<ConligoOrderService.APIDetail> Details
         {
             get
             {
@@ -53,7 +53,7 @@ namespace IcinitiOrderService
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public IcinitiOrderService.APIOrderHeader Header
+        public ConligoOrderService.APIOrderHeader Header
         {
             get
             {
@@ -66,7 +66,7 @@ namespace IcinitiOrderService
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public IcinitiOrderService.APIAddress ShipTo
+        public ConligoOrderService.APIAddress ShipTo
         {
             get
             {
@@ -81,11 +81,11 @@ namespace IcinitiOrderService
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "1.0.0.1")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="APICustomer", Namespace="http://schemas.datacontract.org/2004/07/Iciniti.Suite.WebAPI")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="APICustomer", Namespace="http://schemas.datacontract.org/2004/07/Conligo.Suite.WebAPI")]
     public partial class APICustomer : object
     {
         
-        private System.Collections.Generic.List<IcinitiOrderService.APIOptionalField> OptionsField;
+        private System.Collections.Generic.List<ConligoOrderService.APIOptionalField> OptionsField;
         
         private System.Guid IdField;
         
@@ -210,7 +210,7 @@ namespace IcinitiOrderService
         private string WebsiteField;
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Collections.Generic.List<IcinitiOrderService.APIOptionalField> Options
+        public System.Collections.Generic.List<ConligoOrderService.APIOptionalField> Options
         {
             get
             {
@@ -1018,11 +1018,11 @@ namespace IcinitiOrderService
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "1.0.0.1")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="APIOrderHeader", Namespace="http://schemas.datacontract.org/2004/07/Iciniti.Suite.WebAPI")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="APIOrderHeader", Namespace="http://schemas.datacontract.org/2004/07/Conligo.Suite.WebAPI")]
     public partial class APIOrderHeader : object
     {
         
-        private System.Collections.Generic.List<IcinitiOrderService.APIOptionalField> OptionsField;
+        private System.Collections.Generic.List<ConligoOrderService.APIOptionalField> OptionsField;
         
         private System.Guid IdField;
         
@@ -1185,7 +1185,7 @@ namespace IcinitiOrderService
         private string AccpacDocumentNumberField;
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Collections.Generic.List<IcinitiOrderService.APIOptionalField> Options
+        public System.Collections.Generic.List<ConligoOrderService.APIOptionalField> Options
         {
             get
             {
@@ -2240,11 +2240,11 @@ namespace IcinitiOrderService
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "1.0.0.1")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="APIAddress", Namespace="http://schemas.datacontract.org/2004/07/Iciniti.Suite.WebAPI")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="APIAddress", Namespace="http://schemas.datacontract.org/2004/07/Conligo.Suite.WebAPI")]
     public partial class APIAddress : object
     {
         
-        private System.Collections.Generic.List<IcinitiOrderService.APIOptionalField> OptionsField;
+        private System.Collections.Generic.List<ConligoOrderService.APIOptionalField> OptionsField;
         
         private System.Guid IdField;
         
@@ -2345,7 +2345,7 @@ namespace IcinitiOrderService
         private string WarehouseLocationCodeField;
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Collections.Generic.List<IcinitiOrderService.APIOptionalField> Options
+        public System.Collections.Generic.List<ConligoOrderService.APIOptionalField> Options
         {
             get
             {
@@ -2997,16 +2997,16 @@ namespace IcinitiOrderService
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "1.0.0.1")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="APIDetail", Namespace="http://schemas.datacontract.org/2004/07/Iciniti.Suite.WebAPI")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="APIDetail", Namespace="http://schemas.datacontract.org/2004/07/Conligo.Suite.WebAPI")]
     public partial class APIDetail : object
     {
         
-        private IcinitiOrderService.APIMiscCharge MiscChargeField;
+        private ConligoOrderService.APIMiscCharge MiscChargeField;
         
-        private IcinitiOrderService.APIRegularItem RegularItemField;
+        private ConligoOrderService.APIRegularItem RegularItemField;
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public IcinitiOrderService.APIMiscCharge MiscCharge
+        public ConligoOrderService.APIMiscCharge MiscCharge
         {
             get
             {
@@ -3019,7 +3019,7 @@ namespace IcinitiOrderService
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public IcinitiOrderService.APIRegularItem RegularItem
+        public ConligoOrderService.APIRegularItem RegularItem
         {
             get
             {
@@ -3034,7 +3034,7 @@ namespace IcinitiOrderService
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "1.0.0.1")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="APIOptionalField", Namespace="http://schemas.datacontract.org/2004/07/Iciniti.Suite.WebAPI")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="APIOptionalField", Namespace="http://schemas.datacontract.org/2004/07/Conligo.Suite.WebAPI")]
     public partial class APIOptionalField : object
     {
         
@@ -3116,7 +3116,7 @@ namespace IcinitiOrderService
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "1.0.0.1")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="APIMiscCharge", Namespace="http://schemas.datacontract.org/2004/07/Iciniti.Suite.WebAPI")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="APIMiscCharge", Namespace="http://schemas.datacontract.org/2004/07/Conligo.Suite.WebAPI")]
     public partial class APIMiscCharge : object
     {
         
@@ -3333,11 +3333,11 @@ namespace IcinitiOrderService
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "1.0.0.1")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="APIRegularItem", Namespace="http://schemas.datacontract.org/2004/07/Iciniti.Suite.WebAPI")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="APIRegularItem", Namespace="http://schemas.datacontract.org/2004/07/Conligo.Suite.WebAPI")]
     public partial class APIRegularItem : object
     {
         
-        private System.Collections.Generic.List<IcinitiOrderService.APIOptionalField> OptionsField;
+        private System.Collections.Generic.List<ConligoOrderService.APIOptionalField> OptionsField;
         
         private System.Guid IdField;
         
@@ -3390,7 +3390,7 @@ namespace IcinitiOrderService
         private System.Nullable<short> PriceOverrideField;
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Collections.Generic.List<IcinitiOrderService.APIOptionalField> Options
+        public System.Collections.Generic.List<ConligoOrderService.APIOptionalField> Options
         {
             get
             {
@@ -3730,7 +3730,7 @@ namespace IcinitiOrderService
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "1.0.0.1")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="AuthToken", Namespace="http://schemas.datacontract.org/2004/07/Iciniti.Tokens")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="AuthToken", Namespace="http://schemas.datacontract.org/2004/07/Conligo.Tokens")]
     public partial class AuthToken : object
     {
         
@@ -3841,43 +3841,43 @@ namespace IcinitiOrderService
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "1.0.0.1")]
-    [System.ServiceModel.ServiceContractAttribute(Namespace="Iciniti.Suite.WebAPI", ConfigurationName="IcinitiOrderService.IService")]
+    [System.ServiceModel.ServiceContractAttribute(Namespace="Conligo.Suite.WebAPI", ConfigurationName="ConligoOrderService.IService")]
     public interface IService
     {
         
-        [System.ServiceModel.OperationContractAttribute(Action="Iciniti.Suite.WebAPI/IService/GetOrderNumbers", ReplyAction="Iciniti.Suite.WebAPI/IService/GetOrderNumbersResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="Conligo.Suite.WebAPI/IService/GetOrderNumbers", ReplyAction="Conligo.Suite.WebAPI/IService/GetOrderNumbersResponse")]
         System.Threading.Tasks.Task<System.Collections.Generic.List<string>> GetOrderNumbersAsync(string token, char status);
         
-        [System.ServiceModel.OperationContractAttribute(Action="Iciniti.Suite.WebAPI/IService/GetNextOrder", ReplyAction="Iciniti.Suite.WebAPI/IService/GetNextOrderResponse")]
-        System.Threading.Tasks.Task<IcinitiOrderService.APIOrder> GetNextOrderAsync(string token);
+        [System.ServiceModel.OperationContractAttribute(Action="Conligo.Suite.WebAPI/IService/GetNextOrder", ReplyAction="Conligo.Suite.WebAPI/IService/GetNextOrderResponse")]
+        System.Threading.Tasks.Task<ConligoOrderService.APIOrder> GetNextOrderAsync(string token);
         
-        [System.ServiceModel.OperationContractAttribute(Action="Iciniti.Suite.WebAPI/IService/GetOrder", ReplyAction="Iciniti.Suite.WebAPI/IService/GetOrderResponse")]
-        System.Threading.Tasks.Task<IcinitiOrderService.APIOrder> GetOrderAsync(string token, string id);
+        [System.ServiceModel.OperationContractAttribute(Action="Conligo.Suite.WebAPI/IService/GetOrder", ReplyAction="Conligo.Suite.WebAPI/IService/GetOrderResponse")]
+        System.Threading.Tasks.Task<ConligoOrderService.APIOrder> GetOrderAsync(string token, string id);
         
-        [System.ServiceModel.OperationContractAttribute(Action="Iciniti.Suite.WebAPI/IService/SaveOrder", ReplyAction="Iciniti.Suite.WebAPI/IService/SaveOrderResponse")]
-        System.Threading.Tasks.Task SaveOrderAsync(string token, IcinitiOrderService.APIOrder item);
+        [System.ServiceModel.OperationContractAttribute(Action="Conligo.Suite.WebAPI/IService/SaveOrder", ReplyAction="Conligo.Suite.WebAPI/IService/SaveOrderResponse")]
+        System.Threading.Tasks.Task SaveOrderAsync(string token, ConligoOrderService.APIOrder item);
         
-        [System.ServiceModel.OperationContractAttribute(Action="Iciniti.Suite.WebAPI/IService/Login", ReplyAction="Iciniti.Suite.WebAPI/IService/LoginResponse")]
-        System.Threading.Tasks.Task<IcinitiOrderService.AuthToken> LoginAsync(string licenseKey, string company, string contact);
+        [System.ServiceModel.OperationContractAttribute(Action="Conligo.Suite.WebAPI/IService/Login", ReplyAction="Conligo.Suite.WebAPI/IService/LoginResponse")]
+        System.Threading.Tasks.Task<ConligoOrderService.AuthToken> LoginAsync(string licenseKey, string company, string contact);
         
-        [System.ServiceModel.OperationContractAttribute(Action="Iciniti.Suite.WebAPI/IService/Authenticate", ReplyAction="Iciniti.Suite.WebAPI/IService/AuthenticateResponse")]
-        System.Threading.Tasks.Task<IcinitiOrderService.AuthToken> AuthenticateAsync(string token);
+        [System.ServiceModel.OperationContractAttribute(Action="Conligo.Suite.WebAPI/IService/Authenticate", ReplyAction="Conligo.Suite.WebAPI/IService/AuthenticateResponse")]
+        System.Threading.Tasks.Task<ConligoOrderService.AuthToken> AuthenticateAsync(string token);
         
-        [System.ServiceModel.OperationContractAttribute(Action="Iciniti.Suite.WebAPI/IService/GenerateXml", ReplyAction="Iciniti.Suite.WebAPI/IService/GenerateXmlResponse")]
-        System.Threading.Tasks.Task<string> GenerateXmlAsync(IcinitiOrderService.APIOrder order);
+        [System.ServiceModel.OperationContractAttribute(Action="Conligo.Suite.WebAPI/IService/GenerateXml", ReplyAction="Conligo.Suite.WebAPI/IService/GenerateXmlResponse")]
+        System.Threading.Tasks.Task<string> GenerateXmlAsync(ConligoOrderService.APIOrder order);
         
-        [System.ServiceModel.OperationContractAttribute(Action="Iciniti.Suite.WebAPI/IService/SetOrderStatus", ReplyAction="Iciniti.Suite.WebAPI/IService/SetOrderStatusResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="Conligo.Suite.WebAPI/IService/SetOrderStatus", ReplyAction="Conligo.Suite.WebAPI/IService/SetOrderStatusResponse")]
         System.Threading.Tasks.Task SetOrderStatusAsync(string token, string webDocumentNumber, string sageDocumentNumber, string status, string reason);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "1.0.0.1")]
-    public interface IServiceChannel : IcinitiOrderService.IService, System.ServiceModel.IClientChannel
+    public interface IServiceChannel : ConligoOrderService.IService, System.ServiceModel.IClientChannel
     {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "1.0.0.1")]
-    public partial class ServiceClient : System.ServiceModel.ClientBase<IcinitiOrderService.IService>, IcinitiOrderService.IService
+    public partial class ServiceClient : System.ServiceModel.ClientBase<ConligoOrderService.IService>, ConligoOrderService.IService
     {
         
     /// <summary>
@@ -3925,32 +3925,32 @@ namespace IcinitiOrderService
             return base.Channel.GetOrderNumbersAsync(token, status);
         }
         
-        public System.Threading.Tasks.Task<IcinitiOrderService.APIOrder> GetNextOrderAsync(string token)
+        public System.Threading.Tasks.Task<ConligoOrderService.APIOrder> GetNextOrderAsync(string token)
         {
             return base.Channel.GetNextOrderAsync(token);
         }
         
-        public System.Threading.Tasks.Task<IcinitiOrderService.APIOrder> GetOrderAsync(string token, string id)
+        public System.Threading.Tasks.Task<ConligoOrderService.APIOrder> GetOrderAsync(string token, string id)
         {
             return base.Channel.GetOrderAsync(token, id);
         }
         
-        public System.Threading.Tasks.Task SaveOrderAsync(string token, IcinitiOrderService.APIOrder item)
+        public System.Threading.Tasks.Task SaveOrderAsync(string token, ConligoOrderService.APIOrder item)
         {
             return base.Channel.SaveOrderAsync(token, item);
         }
         
-        public System.Threading.Tasks.Task<IcinitiOrderService.AuthToken> LoginAsync(string licenseKey, string company, string contact)
+        public System.Threading.Tasks.Task<ConligoOrderService.AuthToken> LoginAsync(string licenseKey, string company, string contact)
         {
             return base.Channel.LoginAsync(licenseKey, company, contact);
         }
         
-        public System.Threading.Tasks.Task<IcinitiOrderService.AuthToken> AuthenticateAsync(string token)
+        public System.Threading.Tasks.Task<ConligoOrderService.AuthToken> AuthenticateAsync(string token)
         {
             return base.Channel.AuthenticateAsync(token);
         }
         
-        public System.Threading.Tasks.Task<string> GenerateXmlAsync(IcinitiOrderService.APIOrder order)
+        public System.Threading.Tasks.Task<string> GenerateXmlAsync(ConligoOrderService.APIOrder order)
         {
             return base.Channel.GenerateXmlAsync(order);
         }

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using IcinitiOrderService;
+using ConligoOrderService;
 using Nop.Core;
 using Nop.Core.Domain.Customers;
 using Nop.Core.Domain.Orders;
@@ -12,16 +12,16 @@ using Nop.Services.Customers;
 using Nop.Services.Directory;
 using Nop.Services.Logging;
 
-namespace Nop.Plugin.Misc.IcinitiSaveOrder.Services
+namespace Nop.Plugin.Misc.ConligoSaveOrder.Services
 {
     /// <summary>
-    /// Represents Iciniti service
+    /// Represents Conligo service
     /// </summary>
-    public class IcinitiService
+    public class ConligoService
     {
         #region Fields
 
-        private readonly IcinitiSaveOrderSettings _icinitiSaveOrderSettings;
+        private readonly ConligoSaveOrderSettings _icinitiSaveOrderSettings;
         private readonly ICurrencyService _currencyService;
         private readonly ICustomerService _customerService;
         private readonly IGenericAttributeService _genericAttributeService;
@@ -33,7 +33,7 @@ namespace Nop.Plugin.Misc.IcinitiSaveOrder.Services
 
         #region Ctor
 
-        public IcinitiService(IcinitiSaveOrderSettings icinitiSaveOrderSettings,
+        public ConligoService(ConligoSaveOrderSettings icinitiSaveOrderSettings,
             ICurrencyService currencyService,
             ICustomerService customerService,
             IGenericAttributeService genericAttributeService,
@@ -59,7 +59,7 @@ namespace Nop.Plugin.Misc.IcinitiSaveOrder.Services
         /// <param name="settings">Settings; pass null to use the default one</param>
         /// </summary>
         /// <returns>The asynchronous task whose result contains the authentication token</returns>
-        private async Task<AuthToken> GetAuthTokenAsync(IcinitiSaveOrderSettings settings = null)
+        private async Task<AuthToken> GetAuthTokenAsync(ConligoSaveOrderSettings settings = null)
         {
             settings = settings ?? _icinitiSaveOrderSettings;
 
@@ -311,7 +311,7 @@ namespace Nop.Plugin.Misc.IcinitiSaveOrder.Services
         /// </summary>
         /// <param name="settings">Settings</param>
         /// <returns>Result and message</returns>
-        public (bool isValid, string message) VerifyCredentials(IcinitiSaveOrderSettings settings)
+        public (bool isValid, string message) VerifyCredentials(ConligoSaveOrderSettings settings)
         {
             try
             {
@@ -321,17 +321,17 @@ namespace Nop.Plugin.Misc.IcinitiSaveOrder.Services
                 //check whether token is valid
                 if (authToken?.IsValid ?? false)
                 {
-                    _logger.Information($"Iciniti Plugin. Test passed -> Token: {authToken.Token}", customer: _workContext.CurrentCustomer);
+                    _logger.Information($"Conligo Plugin. Test passed -> Token: {authToken.Token}", customer: _workContext.CurrentCustomer);
                     return (true, "Connected successfully");
                 }
 
-                _logger.Error("Iciniti Plugin. Test failed -> Unable to get a token", customer: _workContext.CurrentCustomer);
+                _logger.Error("Conligo Plugin. Test failed -> Unable to get a token", customer: _workContext.CurrentCustomer);
                 return (false, "Failed to get a token");
             }
             catch (Exception exception)
             {
                 //log errors
-                _logger.Error("Iciniti Plugin. Error", exception, _workContext.CurrentCustomer);
+                _logger.Error("Conligo Plugin. Error", exception, _workContext.CurrentCustomer);
             }
 
             return (default(bool), default(string));
@@ -351,14 +351,14 @@ namespace Nop.Plugin.Misc.IcinitiSaveOrder.Services
                 if (order.Customer == null)
                     throw new NopException("Unable to load customer");
 
-                _logger.Information($"Iciniti Plugin. Saving Order: {order.CustomOrderNumber}", customer: _workContext.CurrentCustomer);
+                _logger.Information($"Conligo Plugin. Saving Order: {order.CustomOrderNumber}", customer: _workContext.CurrentCustomer);
 
                 //obtain auth token
                 var authToken = GetAuthTokenAsync().Result;
                 if (authToken?.IsValid ?? false)
-                    _logger.Information($"Iciniti Plugin. Authentication Successfull -> Order: {order.CustomOrderNumber}; Token: {authToken.Token}", customer: _workContext.CurrentCustomer);
+                    _logger.Information($"Conligo Plugin. Authentication Successfull -> Order: {order.CustomOrderNumber}; Token: {authToken.Token}", customer: _workContext.CurrentCustomer);
                 else
-                    _logger.Information($"Iciniti Plugin. Authentication Failed -> Order: {order.CustomOrderNumber}", customer: _workContext.CurrentCustomer);
+                    _logger.Information($"Conligo Plugin. Authentication Failed -> Order: {order.CustomOrderNumber}", customer: _workContext.CurrentCustomer);
 
                 //prepare order details
                 var apiOrder = new APIOrder();
@@ -382,13 +382,13 @@ namespace Nop.Plugin.Misc.IcinitiSaveOrder.Services
                 //save order details
                 SaveOrderDetailsAsync(authToken.Token, apiOrder).Wait();
 
-                _logger.Information($"Iciniti Plugin. Order successfully saved: {order.CustomOrderNumber}", customer: _workContext.CurrentCustomer);
+                _logger.Information($"Conligo Plugin. Order successfully saved: {order.CustomOrderNumber}", customer: _workContext.CurrentCustomer);
 
             }
             catch (Exception exception)
             {
                 //log errors
-                _logger.Error("Iciniti Plugin. Error", exception, _workContext.CurrentCustomer);
+                _logger.Error("Conligo Plugin. Error", exception, _workContext.CurrentCustomer);
             }
         }
 

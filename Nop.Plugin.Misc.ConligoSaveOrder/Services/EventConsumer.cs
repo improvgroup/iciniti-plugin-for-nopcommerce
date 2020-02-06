@@ -1,7 +1,7 @@
 ﻿using Nop.Core.Domain.Orders;
 using Nop.Services.Events;
 
-namespace Nop.Plugin.Misc.IcinitiSaveOrder.Services
+namespace Nop.Plugin.Misc.ConligoSaveOrder.Services
 {
     /// <summary>
     /// Represents event consumer
@@ -10,13 +10,13 @@ namespace Nop.Plugin.Misc.IcinitiSaveOrder.Services
     {
         #region Fields
 
-        private readonly IcinitiService _icinitiService;
+        private readonly ConligoService _icinitiService;
 
         #endregion
 
         #region Ctor
 
-        public EventConsumer(IcinitiService icinitiService)
+        public EventConsumer(ConligoService icinitiService)
         {
             _icinitiService = icinitiService;
         }

@@ -1,11 +1,11 @@
 ﻿using Nop.Core.Configuration;
 
-namespace Nop.Plugin.Misc.IcinitiSaveOrder
+namespace Nop.Plugin.Misc.ConligoSaveOrder
 {
     /// <summary>
     /// Represents class that is a simple model-container for the key values that the plugin requires.
     /// </summary>
-    public class IcinitiSaveOrderSettings : ISettings
+    public class ConligoSaveOrderSettings : ISettings
     {
         /// <summary>
         /// Gets or sets the API URL.

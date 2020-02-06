@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Nop.Core;
-using Nop.Plugin.Misc.IcinitiSaveOrder.Models;
-using Nop.Plugin.Misc.IcinitiSaveOrder.Services;
+using Nop.Plugin.Misc.ConligoSaveOrder.Models;
+using Nop.Plugin.Misc.ConligoSaveOrder.Services;
 using Nop.Services.Common;
 using Nop.Services.Configuration;
 using Nop.Services.Localization;
@@ -10,13 +10,13 @@ using Nop.Web.Framework;
 using Nop.Web.Framework.Controllers;
 using Nop.Web.Framework.Mvc.Filters;
 
-namespace Nop.Plugin.Misc.IcinitiSaveOrder.Controllers
+namespace Nop.Plugin.Misc.ConligoSaveOrder.Controllers
 {
-    public class IcinitiSaveOrderController : BasePluginController
+    public class ConligoSaveOrderController : BasePluginController
     {
         #region Fields
 
-        private readonly IcinitiService _icinitiService;
+        private readonly ConligoService _icinitiService;
         private readonly IGenericAttributeService _genericAttributeService;
         private readonly ILocalizationService _localizationService;
         private readonly INotificationService _notificationService;
@@ -28,7 +28,7 @@ namespace Nop.Plugin.Misc.IcinitiSaveOrder.Controllers
 
         #region Ctor
 
-        public IcinitiSaveOrderController(IcinitiService icinitiService,
+        public ConligoSaveOrderController(ConligoService icinitiService,
             IGenericAttributeService genericAttributeService,
             ILocalizationService localizationService,
             INotificationService notificationService,
@@ -55,7 +55,7 @@ namespace Nop.Plugin.Misc.IcinitiSaveOrder.Controllers
         {
             //load settings for active store scope
             var storeId = _storeContext.ActiveStoreScopeConfiguration;
-            var icinitiSettings = _settingService.LoadSetting<IcinitiSaveOrderSettings>(storeId);
+            var icinitiSettings = _settingService.LoadSetting<ConligoSaveOrderSettings>(storeId);
 
             //prepare model
             var model = new ConfigurationModel
@@ -69,7 +69,7 @@ namespace Nop.Plugin.Misc.IcinitiSaveOrder.Controllers
 
             //prepare panel visibility
             model.HideGeneralBlock = _genericAttributeService
-                .GetAttribute<bool>(_workContext.CurrentCustomer, IcinitiSaveOrderDefaults.HideGeneralBlock);
+                .GetAttribute<bool>(_workContext.CurrentCustomer, ConligoSaveOrderDefaults.HideGeneralBlock);
 
             //overridable settings
             if (storeId > 0)
@@ -86,7 +86,7 @@ namespace Nop.Plugin.Misc.IcinitiSaveOrder.Controllers
                 && !string.IsNullOrEmpty(icinitiSettings.CompanyName)
                 && !string.IsNullOrEmpty(icinitiSettings.ContactName);
 
-            return View("~/Plugins/Misc.IcinitiSaveOrder/Views/Configure.cshtml", model);
+            return View("~/Plugins/Misc.ConligoSaveOrder/Views/Configure.cshtml", model);
         }
 
         [AuthorizeAdmin]
@@ -100,7 +100,7 @@ namespace Nop.Plugin.Misc.IcinitiSaveOrder.Controllers
 
             //load settings for active store scope
             var storeId = _storeContext.ActiveStoreScopeConfiguration;
-            var icinitiSettings = _settingService.LoadSetting<IcinitiSaveOrderSettings>(storeId);
+            var icinitiSettings = _settingService.LoadSetting<ConligoSaveOrderSettings>(storeId);
 
             //save settings
             icinitiSettings.ApiUrl = model.ApiUrl;
@@ -135,7 +135,7 @@ namespace Nop.Plugin.Misc.IcinitiSaveOrder.Controllers
 
             //load settings for active store scope
             var storeId = _storeContext.ActiveStoreScopeConfiguration;
-            var icinitiSettings = _settingService.LoadSetting<IcinitiSaveOrderSettings>(storeId);
+            var icinitiSettings = _settingService.LoadSetting<ConligoSaveOrderSettings>(storeId);
 
             var (isValid, message) = _icinitiService.VerifyCredentials(icinitiSettings);
             if (isValid)

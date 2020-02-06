@@ -1,0 +1,11 @@
+﻿{
+  "Group": "Misc",
+  "FriendlyName": "Conligo - Save Order Details Plugin",
+  "SystemName": "Misc.ConligoSaveOrder",
+  "Version": "1.2",
+  "SupportedVersions": [ "4.20" ],
+  "Author": "Conligo, nopCommerce team",
+  "DisplayOrder": 1,
+  "FileName": "Nop.Plugin.Misc.ConligoSaveOrder.dll",
+  "Description": "This plugin allows completed order details to flow into Conligo Customer Sage 300 environments. For support, please e-mail us or visit our website at support@conligo.ca  and https://www.conligo.ca  respectively. Thank you for choosing Conligo!"
+}

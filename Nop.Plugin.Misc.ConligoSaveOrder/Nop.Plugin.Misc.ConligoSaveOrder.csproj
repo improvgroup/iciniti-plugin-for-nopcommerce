@@ -2,13 +2,13 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp2.2</TargetFramework>
-    <Copyright>Copyright ©2019 ICINITI Corporation</Copyright>
-    <Company>ICINITI Corporation</Company>
-    <Authors>ICINITI Corporation, Nop Solutions, Ltd</Authors>
+    <Copyright>Copyright ©2019 Conligo</Copyright>
+    <Company>Conligo</Company>
+    <Authors>Conligo, Nop Solutions, Ltd</Authors>
     <PackageLicenseUrl></PackageLicenseUrl>
     <RepositoryUrl>https://github.com/nopSolutions/iciniti-plugin-for-nopcommerce</RepositoryUrl>
     <RepositoryType>Git</RepositoryType>
-    <OutputPath>..\..\Presentation\Nop.Web\Plugins\Misc.IcinitiSaveOrder</OutputPath>
+    <OutputPath>..\..\Presentation\Nop.Web\Plugins\Misc.ConligoSaveOrder</OutputPath>
     <OutDir>$(OutputPath)</OutDir>
     <!--Set this parameter to true to get the dlls copied from the NuGet cache to the output of your project. You need to set this parameter to true if your plugin has a nuget package to ensure that the dlls copied from the NuGet cache to the output of your project-->
     <CopyLocalLockFileAssemblies>false</CopyLocalLockFileAssemblies>
