@@ -10,22 +10,22 @@
 namespace ConligoOrderService
 {
     using System.Runtime.Serialization;
-    
-    
+
+
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "1.0.0.1")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="APIOrder", Namespace="http://schemas.datacontract.org/2004/07/Conligo.Suite.WebAPI")]
+    [System.Runtime.Serialization.DataContractAttribute(Name = "APIOrder", Namespace = "http://schemas.datacontract.org/2004/07/Iciniti.Suite.WebAPI")]
     public partial class APIOrder : object
     {
-        
+
         private ConligoOrderService.APICustomer CustomerField;
-        
+
         private System.Collections.Generic.List<ConligoOrderService.APIDetail> DetailsField;
-        
+
         private ConligoOrderService.APIOrderHeader HeaderField;
-        
+
         private ConligoOrderService.APIAddress ShipToField;
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public ConligoOrderService.APICustomer Customer
         {
@@ -38,7 +38,7 @@ namespace ConligoOrderService
                 this.CustomerField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Collections.Generic.List<ConligoOrderService.APIDetail> Details
         {
@@ -51,7 +51,7 @@ namespace ConligoOrderService
                 this.DetailsField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public ConligoOrderService.APIOrderHeader Header
         {
@@ -64,7 +64,7 @@ namespace ConligoOrderService
                 this.HeaderField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public ConligoOrderService.APIAddress ShipTo
         {
@@ -78,137 +78,137 @@ namespace ConligoOrderService
             }
         }
     }
-    
+
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "1.0.0.1")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="APICustomer", Namespace="http://schemas.datacontract.org/2004/07/Conligo.Suite.WebAPI")]
+    [System.Runtime.Serialization.DataContractAttribute(Name = "APICustomer", Namespace = "http://schemas.datacontract.org/2004/07/Iciniti.Suite.WebAPI")]
     public partial class APICustomer : object
     {
-        
+
         private System.Collections.Generic.List<ConligoOrderService.APIOptionalField> OptionsField;
-        
+
         private System.Guid IdField;
-        
+
         private System.Nullable<System.Guid> HeaderIdField;
-        
+
         private string CustomerCodeField;
-        
+
         private System.Nullable<int> TaxClassCode1Field;
-        
+
         private System.Nullable<int> TaxClassCode2Field;
-        
+
         private System.Nullable<int> TaxClassCode3Field;
-        
+
         private System.Nullable<int> TaxClassCode4Field;
-        
+
         private System.Nullable<int> TaxClassCode5Field;
-        
+
         private string WarehouseLocationCodeField;
-        
+
         private string PriceListCodeField;
-        
+
         private string AccountSetCodeField;
-        
+
         private System.Nullable<int> AccountTypeField;
-        
+
         private string BillingAddrCityField;
-        
+
         private string BillingAddrCountryNameField;
-        
+
         private string BillingAddrLine1Field;
-        
+
         private string BillingAddrLine2Field;
-        
+
         private string BillingAddrLine3Field;
-        
+
         private string BillingAddrLine4Field;
-        
+
         private string BillingAddrPostalCodeField;
-        
+
         private string BillingAddrStateNameField;
-        
+
         private string BillingContactNameField;
-        
+
         private string BillingFaxNumberField;
-        
+
         private string BillingTelNumberField;
-        
+
         private string ContactEmailField;
-        
+
         private string ContactFaxField;
-        
+
         private string ContactPhoneField;
-        
+
         private System.Nullable<decimal> CreditLimitField;
-        
+
         private string CurrencyCodeField;
-        
+
         private string CustomerDiscountTypeField;
-        
+
         private string CustomerEmailField;
-        
+
         private string CustomerNameField;
-        
+
         private string CustomerShortNameField;
-        
+
         private string GroupCodeField;
-        
+
         private System.Nullable<short> IsActiveField;
-        
+
         private System.Nullable<short> IsOnHoldField;
-        
+
         private string NationalAccountCodeField;
-        
+
         private System.Nullable<short> PartShipField;
-        
+
         private string PaymentCodeField;
-        
+
         private string PaymentTermsCodeField;
-        
+
         private string PrimaryShipToLocationField;
-        
+
         private string SalespersonCode1Field;
-        
+
         private string SalespersonCode2Field;
-        
+
         private string SalespersonCode3Field;
-        
+
         private string SalespersonCode4Field;
-        
+
         private string SalespersonCode5Field;
-        
+
         private System.Nullable<decimal> SalesSplitPercentage1Field;
-        
+
         private System.Nullable<decimal> SalesSplitPercentage2Field;
-        
+
         private System.Nullable<decimal> SalesSplitPercentage3Field;
-        
+
         private System.Nullable<decimal> SalesSplitPercentage4Field;
-        
+
         private System.Nullable<decimal> SalesSplitPercentage5Field;
-        
+
         private string ShipViaCodeField;
-        
+
         private string ShipViaDescField;
-        
+
         private System.Nullable<short> ShopOnWebField;
-        
+
         private string TaxGroupCodeField;
-        
+
         private string TaxRegistrationNo1Field;
-        
+
         private string TaxRegistrationNo2Field;
-        
+
         private string TaxRegistrationNo3Field;
-        
+
         private string TaxRegistrationNo4Field;
-        
+
         private string TaxRegistrationNo5Field;
-        
+
         private string TerritoryCodeField;
-        
+
         private string WebsiteField;
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Collections.Generic.List<ConligoOrderService.APIOptionalField> Options
         {
@@ -221,8 +221,8 @@ namespace ConligoOrderService
                 this.OptionsField = value;
             }
         }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=1)]
+
+        [System.Runtime.Serialization.DataMemberAttribute(Order = 1)]
         public System.Guid Id
         {
             get
@@ -234,8 +234,8 @@ namespace ConligoOrderService
                 this.IdField = value;
             }
         }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=2)]
+
+        [System.Runtime.Serialization.DataMemberAttribute(Order = 2)]
         public System.Nullable<System.Guid> HeaderId
         {
             get
@@ -247,8 +247,8 @@ namespace ConligoOrderService
                 this.HeaderIdField = value;
             }
         }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=3)]
+
+        [System.Runtime.Serialization.DataMemberAttribute(Order = 3)]
         public string CustomerCode
         {
             get
@@ -260,8 +260,8 @@ namespace ConligoOrderService
                 this.CustomerCodeField = value;
             }
         }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=4)]
+
+        [System.Runtime.Serialization.DataMemberAttribute(Order = 4)]
         public System.Nullable<int> TaxClassCode1
         {
             get
@@ -273,8 +273,8 @@ namespace ConligoOrderService
                 this.TaxClassCode1Field = value;
             }
         }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=5)]
+
+        [System.Runtime.Serialization.DataMemberAttribute(Order = 5)]
         public System.Nullable<int> TaxClassCode2
         {
             get
@@ -286,8 +286,8 @@ namespace ConligoOrderService
                 this.TaxClassCode2Field = value;
             }
         }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=6)]
+
+        [System.Runtime.Serialization.DataMemberAttribute(Order = 6)]
         public System.Nullable<int> TaxClassCode3
         {
             get
@@ -299,8 +299,8 @@ namespace ConligoOrderService
                 this.TaxClassCode3Field = value;
             }
         }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=7)]
+
+        [System.Runtime.Serialization.DataMemberAttribute(Order = 7)]
         public System.Nullable<int> TaxClassCode4
         {
             get
@@ -312,8 +312,8 @@ namespace ConligoOrderService
                 this.TaxClassCode4Field = value;
             }
         }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=8)]
+
+        [System.Runtime.Serialization.DataMemberAttribute(Order = 8)]
         public System.Nullable<int> TaxClassCode5
         {
             get
@@ -325,8 +325,8 @@ namespace ConligoOrderService
                 this.TaxClassCode5Field = value;
             }
         }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=9)]
+
+        [System.Runtime.Serialization.DataMemberAttribute(Order = 9)]
         public string WarehouseLocationCode
         {
             get
@@ -338,8 +338,8 @@ namespace ConligoOrderService
                 this.WarehouseLocationCodeField = value;
             }
         }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=10)]
+
+        [System.Runtime.Serialization.DataMemberAttribute(Order = 10)]
         public string PriceListCode
         {
             get
@@ -351,8 +351,8 @@ namespace ConligoOrderService
                 this.PriceListCodeField = value;
             }
         }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=11)]
+
+        [System.Runtime.Serialization.DataMemberAttribute(Order = 11)]
         public string AccountSetCode
         {
             get
@@ -364,8 +364,8 @@ namespace ConligoOrderService
                 this.AccountSetCodeField = value;
             }
         }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=12)]
+
+        [System.Runtime.Serialization.DataMemberAttribute(Order = 12)]
         public System.Nullable<int> AccountType
         {
             get
@@ -377,8 +377,8 @@ namespace ConligoOrderService
                 this.AccountTypeField = value;
             }
         }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=13)]
+
+        [System.Runtime.Serialization.DataMemberAttribute(Order = 13)]
         public string BillingAddrCity
         {
             get
@@ -390,8 +390,8 @@ namespace ConligoOrderService
                 this.BillingAddrCityField = value;
             }
         }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=14)]
+
+        [System.Runtime.Serialization.DataMemberAttribute(Order = 14)]
         public string BillingAddrCountryName
         {
             get
@@ -403,8 +403,8 @@ namespace ConligoOrderService
                 this.BillingAddrCountryNameField = value;
             }
         }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=15)]
+
+        [System.Runtime.Serialization.DataMemberAttribute(Order = 15)]
         public string BillingAddrLine1
         {
             get
@@ -416,8 +416,8 @@ namespace ConligoOrderService
                 this.BillingAddrLine1Field = value;
             }
         }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=16)]
+
+        [System.Runtime.Serialization.DataMemberAttribute(Order = 16)]
         public string BillingAddrLine2
         {
             get
@@ -429,8 +429,8 @@ namespace ConligoOrderService
                 this.BillingAddrLine2Field = value;
             }
         }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=17)]
+
+        [System.Runtime.Serialization.DataMemberAttribute(Order = 17)]
         public string BillingAddrLine3
         {
             get
@@ -442,8 +442,8 @@ namespace ConligoOrderService
                 this.BillingAddrLine3Field = value;
             }
         }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=18)]
+
+        [System.Runtime.Serialization.DataMemberAttribute(Order = 18)]
         public string BillingAddrLine4
         {
             get
@@ -455,8 +455,8 @@ namespace ConligoOrderService
                 this.BillingAddrLine4Field = value;
             }
         }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=19)]
+
+        [System.Runtime.Serialization.DataMemberAttribute(Order = 19)]
         public string BillingAddrPostalCode
         {
             get
@@ -468,8 +468,8 @@ namespace ConligoOrderService
                 this.BillingAddrPostalCodeField = value;
             }
         }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=20)]
+
+        [System.Runtime.Serialization.DataMemberAttribute(Order = 20)]
         public string BillingAddrStateName
         {
             get
@@ -481,8 +481,8 @@ namespace ConligoOrderService
                 this.BillingAddrStateNameField = value;
             }
         }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=21)]
+
+        [System.Runtime.Serialization.DataMemberAttribute(Order = 21)]
         public string BillingContactName
         {
             get
@@ -494,8 +494,8 @@ namespace ConligoOrderService
                 this.BillingContactNameField = value;
             }
         }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=22)]
+
+        [System.Runtime.Serialization.DataMemberAttribute(Order = 22)]
         public string BillingFaxNumber
         {
             get
@@ -507,8 +507,8 @@ namespace ConligoOrderService
                 this.BillingFaxNumberField = value;
             }
         }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=23)]
+
+        [System.Runtime.Serialization.DataMemberAttribute(Order = 23)]
         public string BillingTelNumber
         {
             get
@@ -520,8 +520,8 @@ namespace ConligoOrderService
                 this.BillingTelNumberField = value;
             }
         }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=24)]
+
+        [System.Runtime.Serialization.DataMemberAttribute(Order = 24)]
         public string ContactEmail
         {
             get
@@ -533,8 +533,8 @@ namespace ConligoOrderService
                 this.ContactEmailField = value;
             }
         }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=25)]
+
+        [System.Runtime.Serialization.DataMemberAttribute(Order = 25)]
         public string ContactFax
         {
             get
@@ -546,8 +546,8 @@ namespace ConligoOrderService
                 this.ContactFaxField = value;
             }
         }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=26)]
+
+        [System.Runtime.Serialization.DataMemberAttribute(Order = 26)]
         public string ContactPhone
         {
             get
@@ -559,8 +559,8 @@ namespace ConligoOrderService
                 this.ContactPhoneField = value;
             }
         }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=27)]
+
+        [System.Runtime.Serialization.DataMemberAttribute(Order = 27)]
         public System.Nullable<decimal> CreditLimit
         {
             get
@@ -572,8 +572,8 @@ namespace ConligoOrderService
                 this.CreditLimitField = value;
             }
         }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=28)]
+
+        [System.Runtime.Serialization.DataMemberAttribute(Order = 28)]
         public string CurrencyCode
         {
             get
@@ -585,8 +585,8 @@ namespace ConligoOrderService
                 this.CurrencyCodeField = value;
             }
         }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=29)]
+
+        [System.Runtime.Serialization.DataMemberAttribute(Order = 29)]
         public string CustomerDiscountType
         {
             get
@@ -598,8 +598,8 @@ namespace ConligoOrderService
                 this.CustomerDiscountTypeField = value;
             }
         }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=30)]
+
+        [System.Runtime.Serialization.DataMemberAttribute(Order = 30)]
         public string CustomerEmail
         {
             get
@@ -611,8 +611,8 @@ namespace ConligoOrderService
                 this.CustomerEmailField = value;
             }
         }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=31)]
+
+        [System.Runtime.Serialization.DataMemberAttribute(Order = 31)]
         public string CustomerName
         {
             get
@@ -624,8 +624,8 @@ namespace ConligoOrderService
                 this.CustomerNameField = value;
             }
         }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=32)]
+
+        [System.Runtime.Serialization.DataMemberAttribute(Order = 32)]
         public string CustomerShortName
         {
             get
@@ -637,8 +637,8 @@ namespace ConligoOrderService
                 this.CustomerShortNameField = value;
             }
         }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=33)]
+
+        [System.Runtime.Serialization.DataMemberAttribute(Order = 33)]
         public string GroupCode
         {
             get
@@ -650,8 +650,8 @@ namespace ConligoOrderService
                 this.GroupCodeField = value;
             }
         }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=34)]
+
+        [System.Runtime.Serialization.DataMemberAttribute(Order = 34)]
         public System.Nullable<short> IsActive
         {
             get
@@ -663,8 +663,8 @@ namespace ConligoOrderService
                 this.IsActiveField = value;
             }
         }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=35)]
+
+        [System.Runtime.Serialization.DataMemberAttribute(Order = 35)]
         public System.Nullable<short> IsOnHold
         {
             get
@@ -676,8 +676,8 @@ namespace ConligoOrderService
                 this.IsOnHoldField = value;
             }
         }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=36)]
+
+        [System.Runtime.Serialization.DataMemberAttribute(Order = 36)]
         public string NationalAccountCode
         {
             get
@@ -689,8 +689,8 @@ namespace ConligoOrderService
                 this.NationalAccountCodeField = value;
             }
         }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=37)]
+
+        [System.Runtime.Serialization.DataMemberAttribute(Order = 37)]
         public System.Nullable<short> PartShip
         {
             get
@@ -702,8 +702,8 @@ namespace ConligoOrderService
                 this.PartShipField = value;
             }
         }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=38)]
+
+        [System.Runtime.Serialization.DataMemberAttribute(Order = 38)]
         public string PaymentCode
         {
             get
@@ -715,8 +715,8 @@ namespace ConligoOrderService
                 this.PaymentCodeField = value;
             }
         }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=39)]
+
+        [System.Runtime.Serialization.DataMemberAttribute(Order = 39)]
         public string PaymentTermsCode
         {
             get
@@ -728,8 +728,8 @@ namespace ConligoOrderService
                 this.PaymentTermsCodeField = value;
             }
         }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=40)]
+
+        [System.Runtime.Serialization.DataMemberAttribute(Order = 40)]
         public string PrimaryShipToLocation
         {
             get
@@ -741,8 +741,8 @@ namespace ConligoOrderService
                 this.PrimaryShipToLocationField = value;
             }
         }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=41)]
+
+        [System.Runtime.Serialization.DataMemberAttribute(Order = 41)]
         public string SalespersonCode1
         {
             get
@@ -754,8 +754,8 @@ namespace ConligoOrderService
                 this.SalespersonCode1Field = value;
             }
         }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=42)]
+
+        [System.Runtime.Serialization.DataMemberAttribute(Order = 42)]
         public string SalespersonCode2
         {
             get
@@ -767,8 +767,8 @@ namespace ConligoOrderService
                 this.SalespersonCode2Field = value;
             }
         }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=43)]
+
+        [System.Runtime.Serialization.DataMemberAttribute(Order = 43)]
         public string SalespersonCode3
         {
             get
@@ -780,8 +780,8 @@ namespace ConligoOrderService
                 this.SalespersonCode3Field = value;
             }
         }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=44)]
+
+        [System.Runtime.Serialization.DataMemberAttribute(Order = 44)]
         public string SalespersonCode4
         {
             get
@@ -793,8 +793,8 @@ namespace ConligoOrderService
                 this.SalespersonCode4Field = value;
             }
         }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=45)]
+
+        [System.Runtime.Serialization.DataMemberAttribute(Order = 45)]
         public string SalespersonCode5
         {
             get
@@ -806,8 +806,8 @@ namespace ConligoOrderService
                 this.SalespersonCode5Field = value;
             }
         }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=46)]
+
+        [System.Runtime.Serialization.DataMemberAttribute(Order = 46)]
         public System.Nullable<decimal> SalesSplitPercentage1
         {
             get
@@ -819,8 +819,8 @@ namespace ConligoOrderService
                 this.SalesSplitPercentage1Field = value;
             }
         }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=47)]
+
+        [System.Runtime.Serialization.DataMemberAttribute(Order = 47)]
         public System.Nullable<decimal> SalesSplitPercentage2
         {
             get
@@ -832,8 +832,8 @@ namespace ConligoOrderService
                 this.SalesSplitPercentage2Field = value;
             }
         }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=48)]
+
+        [System.Runtime.Serialization.DataMemberAttribute(Order = 48)]
         public System.Nullable<decimal> SalesSplitPercentage3
         {
             get
@@ -845,8 +845,8 @@ namespace ConligoOrderService
                 this.SalesSplitPercentage3Field = value;
             }
         }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=49)]
+
+        [System.Runtime.Serialization.DataMemberAttribute(Order = 49)]
         public System.Nullable<decimal> SalesSplitPercentage4
         {
             get
@@ -858,8 +858,8 @@ namespace ConligoOrderService
                 this.SalesSplitPercentage4Field = value;
             }
         }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=50)]
+
+        [System.Runtime.Serialization.DataMemberAttribute(Order = 50)]
         public System.Nullable<decimal> SalesSplitPercentage5
         {
             get
@@ -871,8 +871,8 @@ namespace ConligoOrderService
                 this.SalesSplitPercentage5Field = value;
             }
         }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=51)]
+
+        [System.Runtime.Serialization.DataMemberAttribute(Order = 51)]
         public string ShipViaCode
         {
             get
@@ -884,8 +884,8 @@ namespace ConligoOrderService
                 this.ShipViaCodeField = value;
             }
         }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=52)]
+
+        [System.Runtime.Serialization.DataMemberAttribute(Order = 52)]
         public string ShipViaDesc
         {
             get
@@ -897,8 +897,8 @@ namespace ConligoOrderService
                 this.ShipViaDescField = value;
             }
         }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=53)]
+
+        [System.Runtime.Serialization.DataMemberAttribute(Order = 53)]
         public System.Nullable<short> ShopOnWeb
         {
             get
@@ -910,8 +910,8 @@ namespace ConligoOrderService
                 this.ShopOnWebField = value;
             }
         }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=54)]
+
+        [System.Runtime.Serialization.DataMemberAttribute(Order = 54)]
         public string TaxGroupCode
         {
             get
@@ -923,8 +923,8 @@ namespace ConligoOrderService
                 this.TaxGroupCodeField = value;
             }
         }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=55)]
+
+        [System.Runtime.Serialization.DataMemberAttribute(Order = 55)]
         public string TaxRegistrationNo1
         {
             get
@@ -936,8 +936,8 @@ namespace ConligoOrderService
                 this.TaxRegistrationNo1Field = value;
             }
         }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=56)]
+
+        [System.Runtime.Serialization.DataMemberAttribute(Order = 56)]
         public string TaxRegistrationNo2
         {
             get
@@ -949,8 +949,8 @@ namespace ConligoOrderService
                 this.TaxRegistrationNo2Field = value;
             }
         }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=57)]
+
+        [System.Runtime.Serialization.DataMemberAttribute(Order = 57)]
         public string TaxRegistrationNo3
         {
             get
@@ -962,8 +962,8 @@ namespace ConligoOrderService
                 this.TaxRegistrationNo3Field = value;
             }
         }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=58)]
+
+        [System.Runtime.Serialization.DataMemberAttribute(Order = 58)]
         public string TaxRegistrationNo4
         {
             get
@@ -975,8 +975,8 @@ namespace ConligoOrderService
                 this.TaxRegistrationNo4Field = value;
             }
         }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=59)]
+
+        [System.Runtime.Serialization.DataMemberAttribute(Order = 59)]
         public string TaxRegistrationNo5
         {
             get
@@ -988,8 +988,8 @@ namespace ConligoOrderService
                 this.TaxRegistrationNo5Field = value;
             }
         }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=60)]
+
+        [System.Runtime.Serialization.DataMemberAttribute(Order = 60)]
         public string TerritoryCode
         {
             get
@@ -1001,8 +1001,8 @@ namespace ConligoOrderService
                 this.TerritoryCodeField = value;
             }
         }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=61)]
+
+        [System.Runtime.Serialization.DataMemberAttribute(Order = 61)]
         public string Website
         {
             get
@@ -1015,175 +1015,175 @@ namespace ConligoOrderService
             }
         }
     }
-    
+
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "1.0.0.1")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="APIOrderHeader", Namespace="http://schemas.datacontract.org/2004/07/Conligo.Suite.WebAPI")]
+    [System.Runtime.Serialization.DataContractAttribute(Name = "APIOrderHeader", Namespace = "http://schemas.datacontract.org/2004/07/Iciniti.Suite.WebAPI")]
     public partial class APIOrderHeader : object
     {
-        
+
         private System.Collections.Generic.List<ConligoOrderService.APIOptionalField> OptionsField;
-        
+
         private System.Guid IdField;
-        
+
         private string LicenseKeyField;
-        
+
         private string OrderNumberField;
-        
+
         private string CustomerCodeField;
-        
+
         private string OrderTypeField;
-        
+
         private System.Nullable<System.DateTime> OrderDateField;
-        
+
         private string ShipCodeField;
-        
+
         private string PriceListField;
-        
+
         private string Salesperson1Field;
-        
+
         private string Salesperson2Field;
-        
+
         private string Salesperson3Field;
-        
+
         private string Salesperson4Field;
-        
+
         private string Salesperson5Field;
-        
+
         private string TaxGroupField;
-        
+
         private string WarehouseLocationCodeField;
-        
+
         private string TermsCodeField;
-        
+
         private System.Nullable<int> DiscountLevelField;
-        
+
         private string ReferenceField;
-        
+
         private string PONumberField;
-        
+
         private string SpecialInstructionField;
-        
+
         private string CustomerNameField;
-        
+
         private string BillContactField;
-        
+
         private string BillAddress1Field;
-        
+
         private string BillAddress2Field;
-        
+
         private string BillAddress3Field;
-        
+
         private string BillAddress4Field;
-        
+
         private string BillCityField;
-        
+
         private string BillStateField;
-        
+
         private string BillCountryField;
-        
+
         private string BillZipField;
-        
+
         private string PhoneNumField;
-        
+
         private string FaxNumField;
-        
+
         private string CustomerEmailField;
-        
+
         private string ContactEmailField;
-        
+
         private string ShipToLocationCodeField;
-        
+
         private string ShipContactField;
-        
+
         private string ShipAddress1Field;
-        
+
         private string ShipAddress2Field;
-        
+
         private string ShipAddress3Field;
-        
+
         private string ShipAddress4Field;
-        
+
         private string ShipCityField;
-        
+
         private string ShipStateField;
-        
+
         private string ShipCountryField;
-        
+
         private string ShipZipField;
-        
+
         private string ShipPhoneField;
-        
+
         private string ShipFaxField;
-        
+
         private System.Nullable<int> TotalItemsField;
-        
+
         private System.Nullable<decimal> SubTotalField;
-        
+
         private System.Nullable<decimal> TotalDiscountAmountField;
-        
+
         private System.Nullable<decimal> TotalShippingAmountField;
-        
+
         private System.Nullable<decimal> Tax1Field;
-        
+
         private System.Nullable<decimal> Tax2Field;
-        
+
         private System.Nullable<decimal> Tax3Field;
-        
+
         private System.Nullable<decimal> Tax4Field;
-        
+
         private System.Nullable<decimal> Tax5Field;
-        
+
         private System.Nullable<decimal> TotalTaxField;
-        
+
         private System.Nullable<decimal> MiscChargeField;
-        
+
         private System.Nullable<decimal> OrderTotalField;
-        
+
         private System.Nullable<decimal> AmountFieldField;
-        
+
         private string CurrencyCodeField;
-        
+
         private System.Nullable<short> TaxStatus1Field;
-        
+
         private System.Nullable<short> TaxStatus2Field;
-        
+
         private System.Nullable<short> TaxStatus3Field;
-        
+
         private System.Nullable<short> TaxStatus4Field;
-        
+
         private System.Nullable<short> TaxStatus5Field;
-        
+
         private System.Nullable<decimal> SalesSplit1Field;
-        
+
         private System.Nullable<decimal> SalesSplit2Field;
-        
+
         private System.Nullable<decimal> SalesSplit3Field;
-        
+
         private System.Nullable<decimal> SalesSplit4Field;
-        
+
         private System.Nullable<decimal> SalesSplit5Field;
-        
+
         private System.Nullable<bool> OnHoldField;
-        
+
         private string FreightMiscChargeCodeField;
-        
+
         private string ShipViaDescField;
-        
+
         private string TermsDescField;
-        
+
         private System.Nullable<System.DateTime> RequestedShipDateField;
-        
+
         private System.Nullable<int> NumberOfOrdersField;
-        
+
         private System.Nullable<char> StatusField;
-        
+
         private string MessageField;
-        
+
         private string WebDocumentNumberField;
-        
+
         private string AccpacDocumentNumberField;
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Collections.Generic.List<ConligoOrderService.APIOptionalField> Options
         {
@@ -1196,8 +1196,8 @@ namespace ConligoOrderService
                 this.OptionsField = value;
             }
         }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=1)]
+
+        [System.Runtime.Serialization.DataMemberAttribute(Order = 1)]
         public System.Guid Id
         {
             get
@@ -1209,8 +1209,8 @@ namespace ConligoOrderService
                 this.IdField = value;
             }
         }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=2)]
+
+        [System.Runtime.Serialization.DataMemberAttribute(Order = 2)]
         public string LicenseKey
         {
             get
@@ -1222,8 +1222,8 @@ namespace ConligoOrderService
                 this.LicenseKeyField = value;
             }
         }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=3)]
+
+        [System.Runtime.Serialization.DataMemberAttribute(Order = 3)]
         public string OrderNumber
         {
             get
@@ -1235,8 +1235,8 @@ namespace ConligoOrderService
                 this.OrderNumberField = value;
             }
         }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=4)]
+
+        [System.Runtime.Serialization.DataMemberAttribute(Order = 4)]
         public string CustomerCode
         {
             get
@@ -1248,8 +1248,8 @@ namespace ConligoOrderService
                 this.CustomerCodeField = value;
             }
         }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=5)]
+
+        [System.Runtime.Serialization.DataMemberAttribute(Order = 5)]
         public string OrderType
         {
             get
@@ -1261,8 +1261,8 @@ namespace ConligoOrderService
                 this.OrderTypeField = value;
             }
         }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=6)]
+
+        [System.Runtime.Serialization.DataMemberAttribute(Order = 6)]
         public System.Nullable<System.DateTime> OrderDate
         {
             get
@@ -1274,8 +1274,8 @@ namespace ConligoOrderService
                 this.OrderDateField = value;
             }
         }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=7)]
+
+        [System.Runtime.Serialization.DataMemberAttribute(Order = 7)]
         public string ShipCode
         {
             get
@@ -1287,8 +1287,8 @@ namespace ConligoOrderService
                 this.ShipCodeField = value;
             }
         }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=8)]
+
+        [System.Runtime.Serialization.DataMemberAttribute(Order = 8)]
         public string PriceList
         {
             get
@@ -1300,8 +1300,8 @@ namespace ConligoOrderService
                 this.PriceListField = value;
             }
         }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=9)]
+
+        [System.Runtime.Serialization.DataMemberAttribute(Order = 9)]
         public string Salesperson1
         {
             get
@@ -1313,8 +1313,8 @@ namespace ConligoOrderService
                 this.Salesperson1Field = value;
             }
         }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=10)]
+
+        [System.Runtime.Serialization.DataMemberAttribute(Order = 10)]
         public string Salesperson2
         {
             get
@@ -1326,8 +1326,8 @@ namespace ConligoOrderService
                 this.Salesperson2Field = value;
             }
         }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=11)]
+
+        [System.Runtime.Serialization.DataMemberAttribute(Order = 11)]
         public string Salesperson3
         {
             get
@@ -1339,8 +1339,8 @@ namespace ConligoOrderService
                 this.Salesperson3Field = value;
             }
         }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=12)]
+
+        [System.Runtime.Serialization.DataMemberAttribute(Order = 12)]
         public string Salesperson4
         {
             get
@@ -1352,8 +1352,8 @@ namespace ConligoOrderService
                 this.Salesperson4Field = value;
             }
         }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=13)]
+
+        [System.Runtime.Serialization.DataMemberAttribute(Order = 13)]
         public string Salesperson5
         {
             get
@@ -1365,8 +1365,8 @@ namespace ConligoOrderService
                 this.Salesperson5Field = value;
             }
         }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=14)]
+
+        [System.Runtime.Serialization.DataMemberAttribute(Order = 14)]
         public string TaxGroup
         {
             get
@@ -1378,8 +1378,8 @@ namespace ConligoOrderService
                 this.TaxGroupField = value;
             }
         }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=15)]
+
+        [System.Runtime.Serialization.DataMemberAttribute(Order = 15)]
         public string WarehouseLocationCode
         {
             get
@@ -1391,8 +1391,8 @@ namespace ConligoOrderService
                 this.WarehouseLocationCodeField = value;
             }
         }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=16)]
+
+        [System.Runtime.Serialization.DataMemberAttribute(Order = 16)]
         public string TermsCode
         {
             get
@@ -1404,8 +1404,8 @@ namespace ConligoOrderService
                 this.TermsCodeField = value;
             }
         }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=17)]
+
+        [System.Runtime.Serialization.DataMemberAttribute(Order = 17)]
         public System.Nullable<int> DiscountLevel
         {
             get
@@ -1417,8 +1417,8 @@ namespace ConligoOrderService
                 this.DiscountLevelField = value;
             }
         }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=18)]
+
+        [System.Runtime.Serialization.DataMemberAttribute(Order = 18)]
         public string Reference
         {
             get
@@ -1430,8 +1430,8 @@ namespace ConligoOrderService
                 this.ReferenceField = value;
             }
         }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=19)]
+
+        [System.Runtime.Serialization.DataMemberAttribute(Order = 19)]
         public string PONumber
         {
             get
@@ -1443,8 +1443,8 @@ namespace ConligoOrderService
                 this.PONumberField = value;
             }
         }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=20)]
+
+        [System.Runtime.Serialization.DataMemberAttribute(Order = 20)]
         public string SpecialInstruction
         {
             get
@@ -1456,8 +1456,8 @@ namespace ConligoOrderService
                 this.SpecialInstructionField = value;
             }
         }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=21)]
+
+        [System.Runtime.Serialization.DataMemberAttribute(Order = 21)]
         public string CustomerName
         {
             get
@@ -1469,8 +1469,8 @@ namespace ConligoOrderService
                 this.CustomerNameField = value;
             }
         }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=22)]
+
+        [System.Runtime.Serialization.DataMemberAttribute(Order = 22)]
         public string BillContact
         {
             get
@@ -1482,8 +1482,8 @@ namespace ConligoOrderService
                 this.BillContactField = value;
             }
         }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=23)]
+
+        [System.Runtime.Serialization.DataMemberAttribute(Order = 23)]
         public string BillAddress1
         {
             get
@@ -1495,8 +1495,8 @@ namespace ConligoOrderService
                 this.BillAddress1Field = value;
             }
         }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=24)]
+
+        [System.Runtime.Serialization.DataMemberAttribute(Order = 24)]
         public string BillAddress2
         {
             get
@@ -1508,8 +1508,8 @@ namespace ConligoOrderService
                 this.BillAddress2Field = value;
             }
         }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=25)]
+
+        [System.Runtime.Serialization.DataMemberAttribute(Order = 25)]
         public string BillAddress3
         {
             get
@@ -1521,8 +1521,8 @@ namespace ConligoOrderService
                 this.BillAddress3Field = value;
             }
         }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=26)]
+
+        [System.Runtime.Serialization.DataMemberAttribute(Order = 26)]
         public string BillAddress4
         {
             get
@@ -1534,8 +1534,8 @@ namespace ConligoOrderService
                 this.BillAddress4Field = value;
             }
         }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=27)]
+
+        [System.Runtime.Serialization.DataMemberAttribute(Order = 27)]
         public string BillCity
         {
             get
@@ -1547,8 +1547,8 @@ namespace ConligoOrderService
                 this.BillCityField = value;
             }
         }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=28)]
+
+        [System.Runtime.Serialization.DataMemberAttribute(Order = 28)]
         public string BillState
         {
             get
@@ -1560,8 +1560,8 @@ namespace ConligoOrderService
                 this.BillStateField = value;
             }
         }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=29)]
+
+        [System.Runtime.Serialization.DataMemberAttribute(Order = 29)]
         public string BillCountry
         {
             get
@@ -1573,8 +1573,8 @@ namespace ConligoOrderService
                 this.BillCountryField = value;
             }
         }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=30)]
+
+        [System.Runtime.Serialization.DataMemberAttribute(Order = 30)]
         public string BillZip
         {
             get
@@ -1586,8 +1586,8 @@ namespace ConligoOrderService
                 this.BillZipField = value;
             }
         }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=31)]
+
+        [System.Runtime.Serialization.DataMemberAttribute(Order = 31)]
         public string PhoneNum
         {
             get
@@ -1599,8 +1599,8 @@ namespace ConligoOrderService
                 this.PhoneNumField = value;
             }
         }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=32)]
+
+        [System.Runtime.Serialization.DataMemberAttribute(Order = 32)]
         public string FaxNum
         {
             get
@@ -1612,8 +1612,8 @@ namespace ConligoOrderService
                 this.FaxNumField = value;
             }
         }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=33)]
+
+        [System.Runtime.Serialization.DataMemberAttribute(Order = 33)]
         public string CustomerEmail
         {
             get
@@ -1625,8 +1625,8 @@ namespace ConligoOrderService
                 this.CustomerEmailField = value;
             }
         }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=34)]
+
+        [System.Runtime.Serialization.DataMemberAttribute(Order = 34)]
         public string ContactEmail
         {
             get
@@ -1638,8 +1638,8 @@ namespace ConligoOrderService
                 this.ContactEmailField = value;
             }
         }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=35)]
+
+        [System.Runtime.Serialization.DataMemberAttribute(Order = 35)]
         public string ShipToLocationCode
         {
             get
@@ -1651,8 +1651,8 @@ namespace ConligoOrderService
                 this.ShipToLocationCodeField = value;
             }
         }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=36)]
+
+        [System.Runtime.Serialization.DataMemberAttribute(Order = 36)]
         public string ShipContact
         {
             get
@@ -1664,8 +1664,8 @@ namespace ConligoOrderService
                 this.ShipContactField = value;
             }
         }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=37)]
+
+        [System.Runtime.Serialization.DataMemberAttribute(Order = 37)]
         public string ShipAddress1
         {
             get
@@ -1677,8 +1677,8 @@ namespace ConligoOrderService
                 this.ShipAddress1Field = value;
             }
         }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=38)]
+
+        [System.Runtime.Serialization.DataMemberAttribute(Order = 38)]
         public string ShipAddress2
         {
             get
@@ -1690,8 +1690,8 @@ namespace ConligoOrderService
                 this.ShipAddress2Field = value;
             }
         }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=39)]
+
+        [System.Runtime.Serialization.DataMemberAttribute(Order = 39)]
         public string ShipAddress3
         {
             get
@@ -1703,8 +1703,8 @@ namespace ConligoOrderService
                 this.ShipAddress3Field = value;
             }
         }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=40)]
+
+        [System.Runtime.Serialization.DataMemberAttribute(Order = 40)]
         public string ShipAddress4
         {
             get
@@ -1716,8 +1716,8 @@ namespace ConligoOrderService
                 this.ShipAddress4Field = value;
             }
         }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=41)]
+
+        [System.Runtime.Serialization.DataMemberAttribute(Order = 41)]
         public string ShipCity
         {
             get
@@ -1729,8 +1729,8 @@ namespace ConligoOrderService
                 this.ShipCityField = value;
             }
         }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=42)]
+
+        [System.Runtime.Serialization.DataMemberAttribute(Order = 42)]
         public string ShipState
         {
             get
@@ -1742,8 +1742,8 @@ namespace ConligoOrderService
                 this.ShipStateField = value;
             }
         }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=43)]
+
+        [System.Runtime.Serialization.DataMemberAttribute(Order = 43)]
         public string ShipCountry
         {
             get
@@ -1755,8 +1755,8 @@ namespace ConligoOrderService
                 this.ShipCountryField = value;
             }
         }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=44)]
+
+        [System.Runtime.Serialization.DataMemberAttribute(Order = 44)]
         public string ShipZip
         {
             get
@@ -1768,8 +1768,8 @@ namespace ConligoOrderService
                 this.ShipZipField = value;
             }
         }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=45)]
+
+        [System.Runtime.Serialization.DataMemberAttribute(Order = 45)]
         public string ShipPhone
         {
             get
@@ -1781,8 +1781,8 @@ namespace ConligoOrderService
                 this.ShipPhoneField = value;
             }
         }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=46)]
+
+        [System.Runtime.Serialization.DataMemberAttribute(Order = 46)]
         public string ShipFax
         {
             get
@@ -1794,8 +1794,8 @@ namespace ConligoOrderService
                 this.ShipFaxField = value;
             }
         }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=47)]
+
+        [System.Runtime.Serialization.DataMemberAttribute(Order = 47)]
         public System.Nullable<int> TotalItems
         {
             get
@@ -1807,8 +1807,8 @@ namespace ConligoOrderService
                 this.TotalItemsField = value;
             }
         }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=48)]
+
+        [System.Runtime.Serialization.DataMemberAttribute(Order = 48)]
         public System.Nullable<decimal> SubTotal
         {
             get
@@ -1820,8 +1820,8 @@ namespace ConligoOrderService
                 this.SubTotalField = value;
             }
         }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=49)]
+
+        [System.Runtime.Serialization.DataMemberAttribute(Order = 49)]
         public System.Nullable<decimal> TotalDiscountAmount
         {
             get
@@ -1833,8 +1833,8 @@ namespace ConligoOrderService
                 this.TotalDiscountAmountField = value;
             }
         }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=50)]
+
+        [System.Runtime.Serialization.DataMemberAttribute(Order = 50)]
         public System.Nullable<decimal> TotalShippingAmount
         {
             get
@@ -1846,8 +1846,8 @@ namespace ConligoOrderService
                 this.TotalShippingAmountField = value;
             }
         }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=51)]
+
+        [System.Runtime.Serialization.DataMemberAttribute(Order = 51)]
         public System.Nullable<decimal> Tax1
         {
             get
@@ -1859,8 +1859,8 @@ namespace ConligoOrderService
                 this.Tax1Field = value;
             }
         }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=52)]
+
+        [System.Runtime.Serialization.DataMemberAttribute(Order = 52)]
         public System.Nullable<decimal> Tax2
         {
             get
@@ -1872,8 +1872,8 @@ namespace ConligoOrderService
                 this.Tax2Field = value;
             }
         }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=53)]
+
+        [System.Runtime.Serialization.DataMemberAttribute(Order = 53)]
         public System.Nullable<decimal> Tax3
         {
             get
@@ -1885,8 +1885,8 @@ namespace ConligoOrderService
                 this.Tax3Field = value;
             }
         }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=54)]
+
+        [System.Runtime.Serialization.DataMemberAttribute(Order = 54)]
         public System.Nullable<decimal> Tax4
         {
             get
@@ -1898,8 +1898,8 @@ namespace ConligoOrderService
                 this.Tax4Field = value;
             }
         }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=55)]
+
+        [System.Runtime.Serialization.DataMemberAttribute(Order = 55)]
         public System.Nullable<decimal> Tax5
         {
             get
@@ -1911,8 +1911,8 @@ namespace ConligoOrderService
                 this.Tax5Field = value;
             }
         }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=56)]
+
+        [System.Runtime.Serialization.DataMemberAttribute(Order = 56)]
         public System.Nullable<decimal> TotalTax
         {
             get
@@ -1924,8 +1924,8 @@ namespace ConligoOrderService
                 this.TotalTaxField = value;
             }
         }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=57)]
+
+        [System.Runtime.Serialization.DataMemberAttribute(Order = 57)]
         public System.Nullable<decimal> MiscCharge
         {
             get
@@ -1937,8 +1937,8 @@ namespace ConligoOrderService
                 this.MiscChargeField = value;
             }
         }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=58)]
+
+        [System.Runtime.Serialization.DataMemberAttribute(Order = 58)]
         public System.Nullable<decimal> OrderTotal
         {
             get
@@ -1950,8 +1950,8 @@ namespace ConligoOrderService
                 this.OrderTotalField = value;
             }
         }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=59)]
+
+        [System.Runtime.Serialization.DataMemberAttribute(Order = 59)]
         public System.Nullable<decimal> AmountField
         {
             get
@@ -1963,8 +1963,8 @@ namespace ConligoOrderService
                 this.AmountFieldField = value;
             }
         }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=60)]
+
+        [System.Runtime.Serialization.DataMemberAttribute(Order = 60)]
         public string CurrencyCode
         {
             get
@@ -1976,8 +1976,8 @@ namespace ConligoOrderService
                 this.CurrencyCodeField = value;
             }
         }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=61)]
+
+        [System.Runtime.Serialization.DataMemberAttribute(Order = 61)]
         public System.Nullable<short> TaxStatus1
         {
             get
@@ -1989,8 +1989,8 @@ namespace ConligoOrderService
                 this.TaxStatus1Field = value;
             }
         }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=62)]
+
+        [System.Runtime.Serialization.DataMemberAttribute(Order = 62)]
         public System.Nullable<short> TaxStatus2
         {
             get
@@ -2002,8 +2002,8 @@ namespace ConligoOrderService
                 this.TaxStatus2Field = value;
             }
         }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=63)]
+
+        [System.Runtime.Serialization.DataMemberAttribute(Order = 63)]
         public System.Nullable<short> TaxStatus3
         {
             get
@@ -2015,8 +2015,8 @@ namespace ConligoOrderService
                 this.TaxStatus3Field = value;
             }
         }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=64)]
+
+        [System.Runtime.Serialization.DataMemberAttribute(Order = 64)]
         public System.Nullable<short> TaxStatus4
         {
             get
@@ -2028,8 +2028,8 @@ namespace ConligoOrderService
                 this.TaxStatus4Field = value;
             }
         }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=65)]
+
+        [System.Runtime.Serialization.DataMemberAttribute(Order = 65)]
         public System.Nullable<short> TaxStatus5
         {
             get
@@ -2041,8 +2041,8 @@ namespace ConligoOrderService
                 this.TaxStatus5Field = value;
             }
         }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=66)]
+
+        [System.Runtime.Serialization.DataMemberAttribute(Order = 66)]
         public System.Nullable<decimal> SalesSplit1
         {
             get
@@ -2054,8 +2054,8 @@ namespace ConligoOrderService
                 this.SalesSplit1Field = value;
             }
         }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=67)]
+
+        [System.Runtime.Serialization.DataMemberAttribute(Order = 67)]
         public System.Nullable<decimal> SalesSplit2
         {
             get
@@ -2067,8 +2067,8 @@ namespace ConligoOrderService
                 this.SalesSplit2Field = value;
             }
         }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=68)]
+
+        [System.Runtime.Serialization.DataMemberAttribute(Order = 68)]
         public System.Nullable<decimal> SalesSplit3
         {
             get
@@ -2080,8 +2080,8 @@ namespace ConligoOrderService
                 this.SalesSplit3Field = value;
             }
         }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=69)]
+
+        [System.Runtime.Serialization.DataMemberAttribute(Order = 69)]
         public System.Nullable<decimal> SalesSplit4
         {
             get
@@ -2093,8 +2093,8 @@ namespace ConligoOrderService
                 this.SalesSplit4Field = value;
             }
         }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=70)]
+
+        [System.Runtime.Serialization.DataMemberAttribute(Order = 70)]
         public System.Nullable<decimal> SalesSplit5
         {
             get
@@ -2106,8 +2106,8 @@ namespace ConligoOrderService
                 this.SalesSplit5Field = value;
             }
         }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=71)]
+
+        [System.Runtime.Serialization.DataMemberAttribute(Order = 71)]
         public System.Nullable<bool> OnHold
         {
             get
@@ -2119,8 +2119,8 @@ namespace ConligoOrderService
                 this.OnHoldField = value;
             }
         }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=72)]
+
+        [System.Runtime.Serialization.DataMemberAttribute(Order = 72)]
         public string FreightMiscChargeCode
         {
             get
@@ -2132,8 +2132,8 @@ namespace ConligoOrderService
                 this.FreightMiscChargeCodeField = value;
             }
         }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=73)]
+
+        [System.Runtime.Serialization.DataMemberAttribute(Order = 73)]
         public string ShipViaDesc
         {
             get
@@ -2145,8 +2145,8 @@ namespace ConligoOrderService
                 this.ShipViaDescField = value;
             }
         }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=74)]
+
+        [System.Runtime.Serialization.DataMemberAttribute(Order = 74)]
         public string TermsDesc
         {
             get
@@ -2158,8 +2158,8 @@ namespace ConligoOrderService
                 this.TermsDescField = value;
             }
         }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=75)]
+
+        [System.Runtime.Serialization.DataMemberAttribute(Order = 75)]
         public System.Nullable<System.DateTime> RequestedShipDate
         {
             get
@@ -2171,8 +2171,8 @@ namespace ConligoOrderService
                 this.RequestedShipDateField = value;
             }
         }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=76)]
+
+        [System.Runtime.Serialization.DataMemberAttribute(Order = 76)]
         public System.Nullable<int> NumberOfOrders
         {
             get
@@ -2184,8 +2184,8 @@ namespace ConligoOrderService
                 this.NumberOfOrdersField = value;
             }
         }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=77)]
+
+        [System.Runtime.Serialization.DataMemberAttribute(Order = 77)]
         public System.Nullable<char> Status
         {
             get
@@ -2197,8 +2197,8 @@ namespace ConligoOrderService
                 this.StatusField = value;
             }
         }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=78)]
+
+        [System.Runtime.Serialization.DataMemberAttribute(Order = 78)]
         public string Message
         {
             get
@@ -2210,8 +2210,8 @@ namespace ConligoOrderService
                 this.MessageField = value;
             }
         }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=79)]
+
+        [System.Runtime.Serialization.DataMemberAttribute(Order = 79)]
         public string WebDocumentNumber
         {
             get
@@ -2223,8 +2223,8 @@ namespace ConligoOrderService
                 this.WebDocumentNumberField = value;
             }
         }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=80)]
+
+        [System.Runtime.Serialization.DataMemberAttribute(Order = 80)]
         public string AccpacDocumentNumber
         {
             get
@@ -2237,113 +2237,113 @@ namespace ConligoOrderService
             }
         }
     }
-    
+
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "1.0.0.1")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="APIAddress", Namespace="http://schemas.datacontract.org/2004/07/Conligo.Suite.WebAPI")]
+    [System.Runtime.Serialization.DataContractAttribute(Name = "APIAddress", Namespace = "http://schemas.datacontract.org/2004/07/Iciniti.Suite.WebAPI")]
     public partial class APIAddress : object
     {
-        
+
         private System.Collections.Generic.List<ConligoOrderService.APIOptionalField> OptionsField;
-        
+
         private System.Guid IdField;
-        
+
         private System.Nullable<System.Guid> HeaderIdField;
-        
+
         private string CustomerCodeField;
-        
+
         private string ShipToLocationCodeField;
-        
+
         private System.Nullable<short> IsActiveField;
-        
+
         private string LocationNameField;
-        
+
         private string AddrLine1Field;
-        
+
         private string AddrLine2Field;
-        
+
         private string AddrLine3Field;
-        
+
         private string AddrLine4Field;
-        
+
         private string AddrCityField;
-        
+
         private string AddrStateNameField;
-        
+
         private string AddrPostalCodeField;
-        
+
         private string AddrCountryNameField;
-        
+
         private string ContactNameField;
-        
+
         private string TelNumberField;
-        
+
         private string FaxNumberField;
-        
+
         private string TeritoryCodeField;
-        
+
         private string TaxGroupCodeField;
-        
+
         private string TaxRegistrationNo1Field;
-        
+
         private string TaxRegistrationNo2Field;
-        
+
         private string TaxRegistrationNo3Field;
-        
+
         private string TaxRegistrationNo4Field;
-        
+
         private string TaxRegistrationNo5Field;
-        
+
         private string TaxClassCode1Field;
-        
+
         private string TaxClassCode2Field;
-        
+
         private string TaxClassCode3Field;
-        
+
         private string TaxClassCode4Field;
-        
+
         private string TaxClassCode5Field;
-        
+
         private string SpecialInstructionsField;
-        
+
         private string SalespersonCode1Field;
-        
+
         private string SalespersonCode2Field;
-        
+
         private string SalespersonCode3Field;
-        
+
         private string SalespersonCode4Field;
-        
+
         private string SalespersonCode5Field;
-        
+
         private System.Nullable<decimal> SalesSplitPercentage1Field;
-        
+
         private System.Nullable<decimal> SalesSplitPercentage2Field;
-        
+
         private System.Nullable<decimal> SalesSplitPercentage3Field;
-        
+
         private System.Nullable<decimal> SalesSplitPercentage4Field;
-        
+
         private System.Nullable<decimal> SalesSplitPercentage5Field;
-        
+
         private string PriceListCodeField;
-        
+
         private string FobField;
-        
+
         private string ShipViaCodeField;
-        
+
         private string ShipViaDescField;
-        
+
         private string CustomerEmailField;
-        
+
         private string ContactPhoneField;
-        
+
         private string ContactFaxField;
-        
+
         private string ContactEmailField;
-        
+
         private string WarehouseLocationCodeField;
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Collections.Generic.List<ConligoOrderService.APIOptionalField> Options
         {
@@ -2356,8 +2356,8 @@ namespace ConligoOrderService
                 this.OptionsField = value;
             }
         }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=1)]
+
+        [System.Runtime.Serialization.DataMemberAttribute(Order = 1)]
         public System.Guid Id
         {
             get
@@ -2369,8 +2369,8 @@ namespace ConligoOrderService
                 this.IdField = value;
             }
         }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=2)]
+
+        [System.Runtime.Serialization.DataMemberAttribute(Order = 2)]
         public System.Nullable<System.Guid> HeaderId
         {
             get
@@ -2382,8 +2382,8 @@ namespace ConligoOrderService
                 this.HeaderIdField = value;
             }
         }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=3)]
+
+        [System.Runtime.Serialization.DataMemberAttribute(Order = 3)]
         public string CustomerCode
         {
             get
@@ -2395,8 +2395,8 @@ namespace ConligoOrderService
                 this.CustomerCodeField = value;
             }
         }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=4)]
+
+        [System.Runtime.Serialization.DataMemberAttribute(Order = 4)]
         public string ShipToLocationCode
         {
             get
@@ -2408,8 +2408,8 @@ namespace ConligoOrderService
                 this.ShipToLocationCodeField = value;
             }
         }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=5)]
+
+        [System.Runtime.Serialization.DataMemberAttribute(Order = 5)]
         public System.Nullable<short> IsActive
         {
             get
@@ -2421,8 +2421,8 @@ namespace ConligoOrderService
                 this.IsActiveField = value;
             }
         }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=6)]
+
+        [System.Runtime.Serialization.DataMemberAttribute(Order = 6)]
         public string LocationName
         {
             get
@@ -2434,8 +2434,8 @@ namespace ConligoOrderService
                 this.LocationNameField = value;
             }
         }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=7)]
+
+        [System.Runtime.Serialization.DataMemberAttribute(Order = 7)]
         public string AddrLine1
         {
             get
@@ -2447,8 +2447,8 @@ namespace ConligoOrderService
                 this.AddrLine1Field = value;
             }
         }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=8)]
+
+        [System.Runtime.Serialization.DataMemberAttribute(Order = 8)]
         public string AddrLine2
         {
             get
@@ -2460,8 +2460,8 @@ namespace ConligoOrderService
                 this.AddrLine2Field = value;
             }
         }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=9)]
+
+        [System.Runtime.Serialization.DataMemberAttribute(Order = 9)]
         public string AddrLine3
         {
             get
@@ -2473,8 +2473,8 @@ namespace ConligoOrderService
                 this.AddrLine3Field = value;
             }
         }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=10)]
+
+        [System.Runtime.Serialization.DataMemberAttribute(Order = 10)]
         public string AddrLine4
         {
             get
@@ -2486,8 +2486,8 @@ namespace ConligoOrderService
                 this.AddrLine4Field = value;
             }
         }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=11)]
+
+        [System.Runtime.Serialization.DataMemberAttribute(Order = 11)]
         public string AddrCity
         {
             get
@@ -2499,8 +2499,8 @@ namespace ConligoOrderService
                 this.AddrCityField = value;
             }
         }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=12)]
+
+        [System.Runtime.Serialization.DataMemberAttribute(Order = 12)]
         public string AddrStateName
         {
             get
@@ -2512,8 +2512,8 @@ namespace ConligoOrderService
                 this.AddrStateNameField = value;
             }
         }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=13)]
+
+        [System.Runtime.Serialization.DataMemberAttribute(Order = 13)]
         public string AddrPostalCode
         {
             get
@@ -2525,8 +2525,8 @@ namespace ConligoOrderService
                 this.AddrPostalCodeField = value;
             }
         }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=14)]
+
+        [System.Runtime.Serialization.DataMemberAttribute(Order = 14)]
         public string AddrCountryName
         {
             get
@@ -2538,8 +2538,8 @@ namespace ConligoOrderService
                 this.AddrCountryNameField = value;
             }
         }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=15)]
+
+        [System.Runtime.Serialization.DataMemberAttribute(Order = 15)]
         public string ContactName
         {
             get
@@ -2551,8 +2551,8 @@ namespace ConligoOrderService
                 this.ContactNameField = value;
             }
         }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=16)]
+
+        [System.Runtime.Serialization.DataMemberAttribute(Order = 16)]
         public string TelNumber
         {
             get
@@ -2564,8 +2564,8 @@ namespace ConligoOrderService
                 this.TelNumberField = value;
             }
         }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=17)]
+
+        [System.Runtime.Serialization.DataMemberAttribute(Order = 17)]
         public string FaxNumber
         {
             get
@@ -2577,8 +2577,8 @@ namespace ConligoOrderService
                 this.FaxNumberField = value;
             }
         }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=18)]
+
+        [System.Runtime.Serialization.DataMemberAttribute(Order = 18)]
         public string TeritoryCode
         {
             get
@@ -2590,8 +2590,8 @@ namespace ConligoOrderService
                 this.TeritoryCodeField = value;
             }
         }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=19)]
+
+        [System.Runtime.Serialization.DataMemberAttribute(Order = 19)]
         public string TaxGroupCode
         {
             get
@@ -2603,8 +2603,8 @@ namespace ConligoOrderService
                 this.TaxGroupCodeField = value;
             }
         }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=20)]
+
+        [System.Runtime.Serialization.DataMemberAttribute(Order = 20)]
         public string TaxRegistrationNo1
         {
             get
@@ -2616,8 +2616,8 @@ namespace ConligoOrderService
                 this.TaxRegistrationNo1Field = value;
             }
         }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=21)]
+
+        [System.Runtime.Serialization.DataMemberAttribute(Order = 21)]
         public string TaxRegistrationNo2
         {
             get
@@ -2629,8 +2629,8 @@ namespace ConligoOrderService
                 this.TaxRegistrationNo2Field = value;
             }
         }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=22)]
+
+        [System.Runtime.Serialization.DataMemberAttribute(Order = 22)]
         public string TaxRegistrationNo3
         {
             get
@@ -2642,8 +2642,8 @@ namespace ConligoOrderService
                 this.TaxRegistrationNo3Field = value;
             }
         }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=23)]
+
+        [System.Runtime.Serialization.DataMemberAttribute(Order = 23)]
         public string TaxRegistrationNo4
         {
             get
@@ -2655,8 +2655,8 @@ namespace ConligoOrderService
                 this.TaxRegistrationNo4Field = value;
             }
         }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=24)]
+
+        [System.Runtime.Serialization.DataMemberAttribute(Order = 24)]
         public string TaxRegistrationNo5
         {
             get
@@ -2668,8 +2668,8 @@ namespace ConligoOrderService
                 this.TaxRegistrationNo5Field = value;
             }
         }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=25)]
+
+        [System.Runtime.Serialization.DataMemberAttribute(Order = 25)]
         public string TaxClassCode1
         {
             get
@@ -2681,8 +2681,8 @@ namespace ConligoOrderService
                 this.TaxClassCode1Field = value;
             }
         }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=26)]
+
+        [System.Runtime.Serialization.DataMemberAttribute(Order = 26)]
         public string TaxClassCode2
         {
             get
@@ -2694,8 +2694,8 @@ namespace ConligoOrderService
                 this.TaxClassCode2Field = value;
             }
         }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=27)]
+
+        [System.Runtime.Serialization.DataMemberAttribute(Order = 27)]
         public string TaxClassCode3
         {
             get
@@ -2707,8 +2707,8 @@ namespace ConligoOrderService
                 this.TaxClassCode3Field = value;
             }
         }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=28)]
+
+        [System.Runtime.Serialization.DataMemberAttribute(Order = 28)]
         public string TaxClassCode4
         {
             get
@@ -2720,8 +2720,8 @@ namespace ConligoOrderService
                 this.TaxClassCode4Field = value;
             }
         }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=29)]
+
+        [System.Runtime.Serialization.DataMemberAttribute(Order = 29)]
         public string TaxClassCode5
         {
             get
@@ -2733,8 +2733,8 @@ namespace ConligoOrderService
                 this.TaxClassCode5Field = value;
             }
         }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=30)]
+
+        [System.Runtime.Serialization.DataMemberAttribute(Order = 30)]
         public string SpecialInstructions
         {
             get
@@ -2746,8 +2746,8 @@ namespace ConligoOrderService
                 this.SpecialInstructionsField = value;
             }
         }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=31)]
+
+        [System.Runtime.Serialization.DataMemberAttribute(Order = 31)]
         public string SalespersonCode1
         {
             get
@@ -2759,8 +2759,8 @@ namespace ConligoOrderService
                 this.SalespersonCode1Field = value;
             }
         }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=32)]
+
+        [System.Runtime.Serialization.DataMemberAttribute(Order = 32)]
         public string SalespersonCode2
         {
             get
@@ -2772,8 +2772,8 @@ namespace ConligoOrderService
                 this.SalespersonCode2Field = value;
             }
         }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=33)]
+
+        [System.Runtime.Serialization.DataMemberAttribute(Order = 33)]
         public string SalespersonCode3
         {
             get
@@ -2785,8 +2785,8 @@ namespace ConligoOrderService
                 this.SalespersonCode3Field = value;
             }
         }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=34)]
+
+        [System.Runtime.Serialization.DataMemberAttribute(Order = 34)]
         public string SalespersonCode4
         {
             get
@@ -2798,8 +2798,8 @@ namespace ConligoOrderService
                 this.SalespersonCode4Field = value;
             }
         }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=35)]
+
+        [System.Runtime.Serialization.DataMemberAttribute(Order = 35)]
         public string SalespersonCode5
         {
             get
@@ -2811,8 +2811,8 @@ namespace ConligoOrderService
                 this.SalespersonCode5Field = value;
             }
         }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=36)]
+
+        [System.Runtime.Serialization.DataMemberAttribute(Order = 36)]
         public System.Nullable<decimal> SalesSplitPercentage1
         {
             get
@@ -2824,8 +2824,8 @@ namespace ConligoOrderService
                 this.SalesSplitPercentage1Field = value;
             }
         }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=37)]
+
+        [System.Runtime.Serialization.DataMemberAttribute(Order = 37)]
         public System.Nullable<decimal> SalesSplitPercentage2
         {
             get
@@ -2837,8 +2837,8 @@ namespace ConligoOrderService
                 this.SalesSplitPercentage2Field = value;
             }
         }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=38)]
+
+        [System.Runtime.Serialization.DataMemberAttribute(Order = 38)]
         public System.Nullable<decimal> SalesSplitPercentage3
         {
             get
@@ -2850,8 +2850,8 @@ namespace ConligoOrderService
                 this.SalesSplitPercentage3Field = value;
             }
         }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=39)]
+
+        [System.Runtime.Serialization.DataMemberAttribute(Order = 39)]
         public System.Nullable<decimal> SalesSplitPercentage4
         {
             get
@@ -2863,8 +2863,8 @@ namespace ConligoOrderService
                 this.SalesSplitPercentage4Field = value;
             }
         }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=40)]
+
+        [System.Runtime.Serialization.DataMemberAttribute(Order = 40)]
         public System.Nullable<decimal> SalesSplitPercentage5
         {
             get
@@ -2876,8 +2876,8 @@ namespace ConligoOrderService
                 this.SalesSplitPercentage5Field = value;
             }
         }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=41)]
+
+        [System.Runtime.Serialization.DataMemberAttribute(Order = 41)]
         public string PriceListCode
         {
             get
@@ -2889,8 +2889,8 @@ namespace ConligoOrderService
                 this.PriceListCodeField = value;
             }
         }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=42)]
+
+        [System.Runtime.Serialization.DataMemberAttribute(Order = 42)]
         public string Fob
         {
             get
@@ -2902,8 +2902,8 @@ namespace ConligoOrderService
                 this.FobField = value;
             }
         }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=43)]
+
+        [System.Runtime.Serialization.DataMemberAttribute(Order = 43)]
         public string ShipViaCode
         {
             get
@@ -2915,8 +2915,8 @@ namespace ConligoOrderService
                 this.ShipViaCodeField = value;
             }
         }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=44)]
+
+        [System.Runtime.Serialization.DataMemberAttribute(Order = 44)]
         public string ShipViaDesc
         {
             get
@@ -2928,8 +2928,8 @@ namespace ConligoOrderService
                 this.ShipViaDescField = value;
             }
         }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=45)]
+
+        [System.Runtime.Serialization.DataMemberAttribute(Order = 45)]
         public string CustomerEmail
         {
             get
@@ -2941,8 +2941,8 @@ namespace ConligoOrderService
                 this.CustomerEmailField = value;
             }
         }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=46)]
+
+        [System.Runtime.Serialization.DataMemberAttribute(Order = 46)]
         public string ContactPhone
         {
             get
@@ -2954,8 +2954,8 @@ namespace ConligoOrderService
                 this.ContactPhoneField = value;
             }
         }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=47)]
+
+        [System.Runtime.Serialization.DataMemberAttribute(Order = 47)]
         public string ContactFax
         {
             get
@@ -2967,8 +2967,8 @@ namespace ConligoOrderService
                 this.ContactFaxField = value;
             }
         }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=48)]
+
+        [System.Runtime.Serialization.DataMemberAttribute(Order = 48)]
         public string ContactEmail
         {
             get
@@ -2980,8 +2980,8 @@ namespace ConligoOrderService
                 this.ContactEmailField = value;
             }
         }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=49)]
+
+        [System.Runtime.Serialization.DataMemberAttribute(Order = 49)]
         public string WarehouseLocationCode
         {
             get
@@ -2994,17 +2994,17 @@ namespace ConligoOrderService
             }
         }
     }
-    
+
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "1.0.0.1")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="APIDetail", Namespace="http://schemas.datacontract.org/2004/07/Conligo.Suite.WebAPI")]
+    [System.Runtime.Serialization.DataContractAttribute(Name = "APIDetail", Namespace = "http://schemas.datacontract.org/2004/07/Iciniti.Suite.WebAPI")]
     public partial class APIDetail : object
     {
-        
+
         private ConligoOrderService.APIMiscCharge MiscChargeField;
-        
+
         private ConligoOrderService.APIRegularItem RegularItemField;
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public ConligoOrderService.APIMiscCharge MiscCharge
         {
@@ -3017,7 +3017,7 @@ namespace ConligoOrderService
                 this.MiscChargeField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public ConligoOrderService.APIRegularItem RegularItem
         {
@@ -3031,23 +3031,23 @@ namespace ConligoOrderService
             }
         }
     }
-    
+
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "1.0.0.1")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="APIOptionalField", Namespace="http://schemas.datacontract.org/2004/07/Conligo.Suite.WebAPI")]
+    [System.Runtime.Serialization.DataContractAttribute(Name = "APIOptionalField", Namespace = "http://schemas.datacontract.org/2004/07/Iciniti.Suite.WebAPI")]
     public partial class APIOptionalField : object
     {
-        
+
         private System.Guid IdField;
-        
+
         private System.Nullable<System.Guid> ParentIdField;
-        
+
         private System.Nullable<int> FieldTypeField;
-        
+
         private string FieldNameField;
-        
+
         private string FieldValueField;
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Guid Id
         {
@@ -3060,7 +3060,7 @@ namespace ConligoOrderService
                 this.IdField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<System.Guid> ParentId
         {
@@ -3073,8 +3073,8 @@ namespace ConligoOrderService
                 this.ParentIdField = value;
             }
         }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=2)]
+
+        [System.Runtime.Serialization.DataMemberAttribute(Order = 2)]
         public System.Nullable<int> FieldType
         {
             get
@@ -3086,8 +3086,8 @@ namespace ConligoOrderService
                 this.FieldTypeField = value;
             }
         }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=3)]
+
+        [System.Runtime.Serialization.DataMemberAttribute(Order = 3)]
         public string FieldName
         {
             get
@@ -3099,8 +3099,8 @@ namespace ConligoOrderService
                 this.FieldNameField = value;
             }
         }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=4)]
+
+        [System.Runtime.Serialization.DataMemberAttribute(Order = 4)]
         public string FieldValue
         {
             get
@@ -3113,41 +3113,41 @@ namespace ConligoOrderService
             }
         }
     }
-    
+
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "1.0.0.1")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="APIMiscCharge", Namespace="http://schemas.datacontract.org/2004/07/Conligo.Suite.WebAPI")]
+    [System.Runtime.Serialization.DataContractAttribute(Name = "APIMiscCharge", Namespace = "http://schemas.datacontract.org/2004/07/Iciniti.Suite.WebAPI")]
     public partial class APIMiscCharge : object
     {
-        
+
         private System.Guid IdField;
-        
+
         private System.Nullable<System.Guid> HeaderIdField;
-        
+
         private System.Nullable<decimal> AmountField;
-        
+
         private System.Nullable<int> ItemLineNumberField;
-        
+
         private string MiscChargeCodeField;
-        
+
         private string DescriptionField;
-        
+
         private decimal Tax1Field;
-        
+
         private decimal Tax2Field;
-        
+
         private decimal Tax3Field;
-        
+
         private decimal Tax4Field;
-        
+
         private decimal Tax5Field;
-        
+
         private decimal TotalTaxField;
-        
+
         private string CommentField;
-        
+
         private string PromoCodeField;
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Guid Id
         {
@@ -3160,8 +3160,8 @@ namespace ConligoOrderService
                 this.IdField = value;
             }
         }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=1)]
+
+        [System.Runtime.Serialization.DataMemberAttribute(Order = 1)]
         public System.Nullable<System.Guid> HeaderId
         {
             get
@@ -3173,8 +3173,8 @@ namespace ConligoOrderService
                 this.HeaderIdField = value;
             }
         }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=2)]
+
+        [System.Runtime.Serialization.DataMemberAttribute(Order = 2)]
         public System.Nullable<decimal> Amount
         {
             get
@@ -3186,8 +3186,8 @@ namespace ConligoOrderService
                 this.AmountField = value;
             }
         }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=3)]
+
+        [System.Runtime.Serialization.DataMemberAttribute(Order = 3)]
         public System.Nullable<int> ItemLineNumber
         {
             get
@@ -3199,8 +3199,8 @@ namespace ConligoOrderService
                 this.ItemLineNumberField = value;
             }
         }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=4)]
+
+        [System.Runtime.Serialization.DataMemberAttribute(Order = 4)]
         public string MiscChargeCode
         {
             get
@@ -3212,8 +3212,8 @@ namespace ConligoOrderService
                 this.MiscChargeCodeField = value;
             }
         }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=5)]
+
+        [System.Runtime.Serialization.DataMemberAttribute(Order = 5)]
         public string Description
         {
             get
@@ -3225,8 +3225,8 @@ namespace ConligoOrderService
                 this.DescriptionField = value;
             }
         }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=6)]
+
+        [System.Runtime.Serialization.DataMemberAttribute(Order = 6)]
         public decimal Tax1
         {
             get
@@ -3238,8 +3238,8 @@ namespace ConligoOrderService
                 this.Tax1Field = value;
             }
         }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=7)]
+
+        [System.Runtime.Serialization.DataMemberAttribute(Order = 7)]
         public decimal Tax2
         {
             get
@@ -3251,8 +3251,8 @@ namespace ConligoOrderService
                 this.Tax2Field = value;
             }
         }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=8)]
+
+        [System.Runtime.Serialization.DataMemberAttribute(Order = 8)]
         public decimal Tax3
         {
             get
@@ -3264,8 +3264,8 @@ namespace ConligoOrderService
                 this.Tax3Field = value;
             }
         }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=9)]
+
+        [System.Runtime.Serialization.DataMemberAttribute(Order = 9)]
         public decimal Tax4
         {
             get
@@ -3277,8 +3277,8 @@ namespace ConligoOrderService
                 this.Tax4Field = value;
             }
         }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=10)]
+
+        [System.Runtime.Serialization.DataMemberAttribute(Order = 10)]
         public decimal Tax5
         {
             get
@@ -3290,8 +3290,8 @@ namespace ConligoOrderService
                 this.Tax5Field = value;
             }
         }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=11)]
+
+        [System.Runtime.Serialization.DataMemberAttribute(Order = 11)]
         public decimal TotalTax
         {
             get
@@ -3303,8 +3303,8 @@ namespace ConligoOrderService
                 this.TotalTaxField = value;
             }
         }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=12)]
+
+        [System.Runtime.Serialization.DataMemberAttribute(Order = 12)]
         public string Comment
         {
             get
@@ -3316,8 +3316,8 @@ namespace ConligoOrderService
                 this.CommentField = value;
             }
         }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=13)]
+
+        [System.Runtime.Serialization.DataMemberAttribute(Order = 13)]
         public string PromoCode
         {
             get
@@ -3330,65 +3330,65 @@ namespace ConligoOrderService
             }
         }
     }
-    
+
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "1.0.0.1")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="APIRegularItem", Namespace="http://schemas.datacontract.org/2004/07/Conligo.Suite.WebAPI")]
+    [System.Runtime.Serialization.DataContractAttribute(Name = "APIRegularItem", Namespace = "http://schemas.datacontract.org/2004/07/Iciniti.Suite.WebAPI")]
     public partial class APIRegularItem : object
     {
-        
+
         private System.Collections.Generic.List<ConligoOrderService.APIOptionalField> OptionsField;
-        
+
         private System.Guid IdField;
-        
+
         private System.Nullable<System.Guid> HeaderIdField;
-        
+
         private string OrderNumberField;
-        
+
         private string ItemCodeField;
-        
+
         private System.Nullable<int> ItemLineNumberField;
-        
+
         private string ItemDescriptionField;
-        
+
         private System.Nullable<decimal> ItemQuantityField;
-        
+
         private System.Nullable<decimal> ItemPricingUnitPriceField;
-        
+
         private System.Nullable<decimal> ItemDiscountField;
-        
+
         private System.Nullable<decimal> ItemExtDiscountField;
-        
+
         private System.Nullable<decimal> ItemTax1Field;
-        
+
         private System.Nullable<decimal> ItemTax2Field;
-        
+
         private System.Nullable<decimal> ItemTax3Field;
-        
+
         private System.Nullable<decimal> ItemTax4Field;
-        
+
         private System.Nullable<decimal> ItemTax5Field;
-        
+
         private System.Nullable<decimal> ItemTotalTaxField;
-        
+
         private System.Nullable<decimal> ItemShipCostField;
-        
+
         private System.Nullable<decimal> ItemWeightField;
-        
+
         private System.Nullable<int> ItemTypeField;
-        
+
         private string BOMNumberField;
-        
+
         private string PromoCodeField;
-        
+
         private string CommentField;
-        
+
         private string OrderingUOMField;
-        
+
         private string PricingUOMField;
-        
+
         private System.Nullable<short> PriceOverrideField;
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Collections.Generic.List<ConligoOrderService.APIOptionalField> Options
         {
@@ -3401,8 +3401,8 @@ namespace ConligoOrderService
                 this.OptionsField = value;
             }
         }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=1)]
+
+        [System.Runtime.Serialization.DataMemberAttribute(Order = 1)]
         public System.Guid Id
         {
             get
@@ -3414,8 +3414,8 @@ namespace ConligoOrderService
                 this.IdField = value;
             }
         }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=2)]
+
+        [System.Runtime.Serialization.DataMemberAttribute(Order = 2)]
         public System.Nullable<System.Guid> HeaderId
         {
             get
@@ -3427,8 +3427,8 @@ namespace ConligoOrderService
                 this.HeaderIdField = value;
             }
         }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=3)]
+
+        [System.Runtime.Serialization.DataMemberAttribute(Order = 3)]
         public string OrderNumber
         {
             get
@@ -3440,8 +3440,8 @@ namespace ConligoOrderService
                 this.OrderNumberField = value;
             }
         }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=4)]
+
+        [System.Runtime.Serialization.DataMemberAttribute(Order = 4)]
         public string ItemCode
         {
             get
@@ -3453,8 +3453,8 @@ namespace ConligoOrderService
                 this.ItemCodeField = value;
             }
         }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=5)]
+
+        [System.Runtime.Serialization.DataMemberAttribute(Order = 5)]
         public System.Nullable<int> ItemLineNumber
         {
             get
@@ -3466,8 +3466,8 @@ namespace ConligoOrderService
                 this.ItemLineNumberField = value;
             }
         }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=6)]
+
+        [System.Runtime.Serialization.DataMemberAttribute(Order = 6)]
         public string ItemDescription
         {
             get
@@ -3479,8 +3479,8 @@ namespace ConligoOrderService
                 this.ItemDescriptionField = value;
             }
         }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=7)]
+
+        [System.Runtime.Serialization.DataMemberAttribute(Order = 7)]
         public System.Nullable<decimal> ItemQuantity
         {
             get
@@ -3492,8 +3492,8 @@ namespace ConligoOrderService
                 this.ItemQuantityField = value;
             }
         }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=8)]
+
+        [System.Runtime.Serialization.DataMemberAttribute(Order = 8)]
         public System.Nullable<decimal> ItemPricingUnitPrice
         {
             get
@@ -3505,8 +3505,8 @@ namespace ConligoOrderService
                 this.ItemPricingUnitPriceField = value;
             }
         }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=9)]
+
+        [System.Runtime.Serialization.DataMemberAttribute(Order = 9)]
         public System.Nullable<decimal> ItemDiscount
         {
             get
@@ -3518,8 +3518,8 @@ namespace ConligoOrderService
                 this.ItemDiscountField = value;
             }
         }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=10)]
+
+        [System.Runtime.Serialization.DataMemberAttribute(Order = 10)]
         public System.Nullable<decimal> ItemExtDiscount
         {
             get
@@ -3531,8 +3531,8 @@ namespace ConligoOrderService
                 this.ItemExtDiscountField = value;
             }
         }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=11)]
+
+        [System.Runtime.Serialization.DataMemberAttribute(Order = 11)]
         public System.Nullable<decimal> ItemTax1
         {
             get
@@ -3544,8 +3544,8 @@ namespace ConligoOrderService
                 this.ItemTax1Field = value;
             }
         }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=12)]
+
+        [System.Runtime.Serialization.DataMemberAttribute(Order = 12)]
         public System.Nullable<decimal> ItemTax2
         {
             get
@@ -3557,8 +3557,8 @@ namespace ConligoOrderService
                 this.ItemTax2Field = value;
             }
         }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=13)]
+
+        [System.Runtime.Serialization.DataMemberAttribute(Order = 13)]
         public System.Nullable<decimal> ItemTax3
         {
             get
@@ -3570,8 +3570,8 @@ namespace ConligoOrderService
                 this.ItemTax3Field = value;
             }
         }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=14)]
+
+        [System.Runtime.Serialization.DataMemberAttribute(Order = 14)]
         public System.Nullable<decimal> ItemTax4
         {
             get
@@ -3583,8 +3583,8 @@ namespace ConligoOrderService
                 this.ItemTax4Field = value;
             }
         }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=15)]
+
+        [System.Runtime.Serialization.DataMemberAttribute(Order = 15)]
         public System.Nullable<decimal> ItemTax5
         {
             get
@@ -3596,8 +3596,8 @@ namespace ConligoOrderService
                 this.ItemTax5Field = value;
             }
         }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=16)]
+
+        [System.Runtime.Serialization.DataMemberAttribute(Order = 16)]
         public System.Nullable<decimal> ItemTotalTax
         {
             get
@@ -3609,8 +3609,8 @@ namespace ConligoOrderService
                 this.ItemTotalTaxField = value;
             }
         }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=17)]
+
+        [System.Runtime.Serialization.DataMemberAttribute(Order = 17)]
         public System.Nullable<decimal> ItemShipCost
         {
             get
@@ -3622,8 +3622,8 @@ namespace ConligoOrderService
                 this.ItemShipCostField = value;
             }
         }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=18)]
+
+        [System.Runtime.Serialization.DataMemberAttribute(Order = 18)]
         public System.Nullable<decimal> ItemWeight
         {
             get
@@ -3635,8 +3635,8 @@ namespace ConligoOrderService
                 this.ItemWeightField = value;
             }
         }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=19)]
+
+        [System.Runtime.Serialization.DataMemberAttribute(Order = 19)]
         public System.Nullable<int> ItemType
         {
             get
@@ -3648,8 +3648,8 @@ namespace ConligoOrderService
                 this.ItemTypeField = value;
             }
         }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=20)]
+
+        [System.Runtime.Serialization.DataMemberAttribute(Order = 20)]
         public string BOMNumber
         {
             get
@@ -3661,8 +3661,8 @@ namespace ConligoOrderService
                 this.BOMNumberField = value;
             }
         }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=21)]
+
+        [System.Runtime.Serialization.DataMemberAttribute(Order = 21)]
         public string PromoCode
         {
             get
@@ -3674,8 +3674,8 @@ namespace ConligoOrderService
                 this.PromoCodeField = value;
             }
         }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=22)]
+
+        [System.Runtime.Serialization.DataMemberAttribute(Order = 22)]
         public string Comment
         {
             get
@@ -3687,8 +3687,8 @@ namespace ConligoOrderService
                 this.CommentField = value;
             }
         }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=23)]
+
+        [System.Runtime.Serialization.DataMemberAttribute(Order = 23)]
         public string OrderingUOM
         {
             get
@@ -3700,8 +3700,8 @@ namespace ConligoOrderService
                 this.OrderingUOMField = value;
             }
         }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=24)]
+
+        [System.Runtime.Serialization.DataMemberAttribute(Order = 24)]
         public string PricingUOM
         {
             get
@@ -3713,8 +3713,8 @@ namespace ConligoOrderService
                 this.PricingUOMField = value;
             }
         }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=25)]
+
+        [System.Runtime.Serialization.DataMemberAttribute(Order = 25)]
         public System.Nullable<short> PriceOverride
         {
             get
@@ -3727,27 +3727,27 @@ namespace ConligoOrderService
             }
         }
     }
-    
+
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "1.0.0.1")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="AuthToken", Namespace="http://schemas.datacontract.org/2004/07/Conligo.Tokens")]
+    [System.Runtime.Serialization.DataContractAttribute(Name = "AuthToken", Namespace = "http://schemas.datacontract.org/2004/07/Iciniti.Tokens")]
     public partial class AuthToken : object
     {
-        
+
         private string CompanyField;
-        
+
         private string ContactField;
-        
+
         private System.DateTime ExpiresField;
-        
+
         private bool IsValidField;
-        
+
         private string LicenseKeyField;
-        
+
         private string MessageField;
-        
+
         private string TokenField;
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string Company
         {
@@ -3760,7 +3760,7 @@ namespace ConligoOrderService
                 this.CompanyField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string Contact
         {
@@ -3773,7 +3773,7 @@ namespace ConligoOrderService
                 this.ContactField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.DateTime Expires
         {
@@ -3786,7 +3786,7 @@ namespace ConligoOrderService
                 this.ExpiresField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public bool IsValid
         {
@@ -3799,7 +3799,7 @@ namespace ConligoOrderService
                 this.IsValidField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string LicenseKey
         {
@@ -3812,7 +3812,7 @@ namespace ConligoOrderService
                 this.LicenseKeyField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string Message
         {
@@ -3825,7 +3825,7 @@ namespace ConligoOrderService
                 this.MessageField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string Token
         {
@@ -3839,137 +3839,137 @@ namespace ConligoOrderService
             }
         }
     }
-    
+
     [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "1.0.0.1")]
-    [System.ServiceModel.ServiceContractAttribute(Namespace="Conligo.Suite.WebAPI", ConfigurationName="ConligoOrderService.IService")]
+    [System.ServiceModel.ServiceContractAttribute(Namespace = "Iciniti.Suite.WebAPI", ConfigurationName = "IcinitiOrderService.IService")]
     public interface IService
     {
-        
-        [System.ServiceModel.OperationContractAttribute(Action="Conligo.Suite.WebAPI/IService/GetOrderNumbers", ReplyAction="Conligo.Suite.WebAPI/IService/GetOrderNumbersResponse")]
+
+        [System.ServiceModel.OperationContractAttribute(Action = "Iciniti.Suite.WebAPI/IService/GetOrderNumbers", ReplyAction = "Iciniti.Suite.WebAPI/IService/GetOrderNumbersResponse")]
         System.Threading.Tasks.Task<System.Collections.Generic.List<string>> GetOrderNumbersAsync(string token, char status);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="Conligo.Suite.WebAPI/IService/GetNextOrder", ReplyAction="Conligo.Suite.WebAPI/IService/GetNextOrderResponse")]
+
+        [System.ServiceModel.OperationContractAttribute(Action = "Iciniti.Suite.WebAPI/IService/GetNextOrder", ReplyAction = "Iciniti.Suite.WebAPI/IService/GetNextOrderResponse")]
         System.Threading.Tasks.Task<ConligoOrderService.APIOrder> GetNextOrderAsync(string token);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="Conligo.Suite.WebAPI/IService/GetOrder", ReplyAction="Conligo.Suite.WebAPI/IService/GetOrderResponse")]
+
+        [System.ServiceModel.OperationContractAttribute(Action = "Iciniti.Suite.WebAPI/IService/GetOrder", ReplyAction = "Iciniti.Suite.WebAPI/IService/GetOrderResponse")]
         System.Threading.Tasks.Task<ConligoOrderService.APIOrder> GetOrderAsync(string token, string id);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="Conligo.Suite.WebAPI/IService/SaveOrder", ReplyAction="Conligo.Suite.WebAPI/IService/SaveOrderResponse")]
+
+        [System.ServiceModel.OperationContractAttribute(Action = "Iciniti.Suite.WebAPI/IService/SaveOrder", ReplyAction = "Iciniti.Suite.WebAPI/IService/SaveOrderResponse")]
         System.Threading.Tasks.Task SaveOrderAsync(string token, ConligoOrderService.APIOrder item);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="Conligo.Suite.WebAPI/IService/Login", ReplyAction="Conligo.Suite.WebAPI/IService/LoginResponse")]
+
+        [System.ServiceModel.OperationContractAttribute(Action = "Iciniti.Suite.WebAPI/IService/Login", ReplyAction = "Iciniti.Suite.WebAPI/IService/LoginResponse")]
         System.Threading.Tasks.Task<ConligoOrderService.AuthToken> LoginAsync(string licenseKey, string company, string contact);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="Conligo.Suite.WebAPI/IService/Authenticate", ReplyAction="Conligo.Suite.WebAPI/IService/AuthenticateResponse")]
+
+        [System.ServiceModel.OperationContractAttribute(Action = "Iciniti.Suite.WebAPI/IService/Authenticate", ReplyAction = "Iciniti.Suite.WebAPI/IService/AuthenticateResponse")]
         System.Threading.Tasks.Task<ConligoOrderService.AuthToken> AuthenticateAsync(string token);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="Conligo.Suite.WebAPI/IService/GenerateXml", ReplyAction="Conligo.Suite.WebAPI/IService/GenerateXmlResponse")]
+
+        [System.ServiceModel.OperationContractAttribute(Action = "Iciniti.Suite.WebAPI/IService/GenerateXml", ReplyAction = "Iciniti.Suite.WebAPI/IService/GenerateXmlResponse")]
         System.Threading.Tasks.Task<string> GenerateXmlAsync(ConligoOrderService.APIOrder order);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="Conligo.Suite.WebAPI/IService/SetOrderStatus", ReplyAction="Conligo.Suite.WebAPI/IService/SetOrderStatusResponse")]
+
+        [System.ServiceModel.OperationContractAttribute(Action = "Iciniti.Suite.WebAPI/IService/SetOrderStatus", ReplyAction = "Iciniti.Suite.WebAPI/IService/SetOrderStatusResponse")]
         System.Threading.Tasks.Task SetOrderStatusAsync(string token, string webDocumentNumber, string sageDocumentNumber, string status, string reason);
     }
-    
+
     [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "1.0.0.1")]
     public interface IServiceChannel : ConligoOrderService.IService, System.ServiceModel.IClientChannel
     {
     }
-    
+
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "1.0.0.1")]
     public partial class ServiceClient : System.ServiceModel.ClientBase<ConligoOrderService.IService>, ConligoOrderService.IService
     {
-        
-    /// <summary>
-    /// Implement this partial method to configure the service endpoint.
-    /// </summary>
-    /// <param name="serviceEndpoint">The endpoint to configure</param>
-    /// <param name="clientCredentials">The client credentials</param>
-    static partial void ConfigureEndpoint(System.ServiceModel.Description.ServiceEndpoint serviceEndpoint, System.ServiceModel.Description.ClientCredentials clientCredentials);
-        
-        public ServiceClient() : 
+
+        /// <summary>
+        /// Implement this partial method to configure the service endpoint.
+        /// </summary>
+        /// <param name="serviceEndpoint">The endpoint to configure</param>
+        /// <param name="clientCredentials">The client credentials</param>
+        static partial void ConfigureEndpoint(System.ServiceModel.Description.ServiceEndpoint serviceEndpoint, System.ServiceModel.Description.ClientCredentials clientCredentials);
+
+        public ServiceClient() :
                 base(ServiceClient.GetDefaultBinding(), ServiceClient.GetDefaultEndpointAddress())
         {
             this.Endpoint.Name = EndpointConfiguration.BasicHttpBinding_IService.ToString();
             ConfigureEndpoint(this.Endpoint, this.ClientCredentials);
         }
-        
-        public ServiceClient(EndpointConfiguration endpointConfiguration) : 
+
+        public ServiceClient(EndpointConfiguration endpointConfiguration) :
                 base(ServiceClient.GetBindingForEndpoint(endpointConfiguration), ServiceClient.GetEndpointAddress(endpointConfiguration))
         {
             this.Endpoint.Name = endpointConfiguration.ToString();
             ConfigureEndpoint(this.Endpoint, this.ClientCredentials);
         }
-        
-        public ServiceClient(EndpointConfiguration endpointConfiguration, string remoteAddress) : 
+
+        public ServiceClient(EndpointConfiguration endpointConfiguration, string remoteAddress) :
                 base(ServiceClient.GetBindingForEndpoint(endpointConfiguration), new System.ServiceModel.EndpointAddress(remoteAddress))
         {
             this.Endpoint.Name = endpointConfiguration.ToString();
             ConfigureEndpoint(this.Endpoint, this.ClientCredentials);
         }
-        
-        public ServiceClient(EndpointConfiguration endpointConfiguration, System.ServiceModel.EndpointAddress remoteAddress) : 
+
+        public ServiceClient(EndpointConfiguration endpointConfiguration, System.ServiceModel.EndpointAddress remoteAddress) :
                 base(ServiceClient.GetBindingForEndpoint(endpointConfiguration), remoteAddress)
         {
             this.Endpoint.Name = endpointConfiguration.ToString();
             ConfigureEndpoint(this.Endpoint, this.ClientCredentials);
         }
-        
-        public ServiceClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
+
+        public ServiceClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) :
                 base(binding, remoteAddress)
         {
         }
-        
+
         public System.Threading.Tasks.Task<System.Collections.Generic.List<string>> GetOrderNumbersAsync(string token, char status)
         {
             return base.Channel.GetOrderNumbersAsync(token, status);
         }
-        
+
         public System.Threading.Tasks.Task<ConligoOrderService.APIOrder> GetNextOrderAsync(string token)
         {
             return base.Channel.GetNextOrderAsync(token);
         }
-        
+
         public System.Threading.Tasks.Task<ConligoOrderService.APIOrder> GetOrderAsync(string token, string id)
         {
             return base.Channel.GetOrderAsync(token, id);
         }
-        
+
         public System.Threading.Tasks.Task SaveOrderAsync(string token, ConligoOrderService.APIOrder item)
         {
             return base.Channel.SaveOrderAsync(token, item);
         }
-        
+
         public System.Threading.Tasks.Task<ConligoOrderService.AuthToken> LoginAsync(string licenseKey, string company, string contact)
         {
             return base.Channel.LoginAsync(licenseKey, company, contact);
         }
-        
+
         public System.Threading.Tasks.Task<ConligoOrderService.AuthToken> AuthenticateAsync(string token)
         {
             return base.Channel.AuthenticateAsync(token);
         }
-        
+
         public System.Threading.Tasks.Task<string> GenerateXmlAsync(ConligoOrderService.APIOrder order)
         {
             return base.Channel.GenerateXmlAsync(order);
         }
-        
+
         public System.Threading.Tasks.Task SetOrderStatusAsync(string token, string webDocumentNumber, string sageDocumentNumber, string status, string reason)
         {
             return base.Channel.SetOrderStatusAsync(token, webDocumentNumber, sageDocumentNumber, status, reason);
         }
-        
+
         public virtual System.Threading.Tasks.Task OpenAsync()
         {
             return System.Threading.Tasks.Task.Factory.FromAsync(((System.ServiceModel.ICommunicationObject)(this)).BeginOpen(null, null), new System.Action<System.IAsyncResult>(((System.ServiceModel.ICommunicationObject)(this)).EndOpen));
         }
-        
+
         public virtual System.Threading.Tasks.Task CloseAsync()
         {
             return System.Threading.Tasks.Task.Factory.FromAsync(((System.ServiceModel.ICommunicationObject)(this)).BeginClose(null, null), new System.Action<System.IAsyncResult>(((System.ServiceModel.ICommunicationObject)(this)).EndClose));
         }
-        
+
         private static System.ServiceModel.Channels.Binding GetBindingForEndpoint(EndpointConfiguration endpointConfiguration)
         {
             if ((endpointConfiguration == EndpointConfiguration.BasicHttpBinding_IService))
@@ -3983,7 +3983,7 @@ namespace ConligoOrderService
             }
             throw new System.InvalidOperationException(string.Format("Could not find endpoint with name \'{0}\'.", endpointConfiguration));
         }
-        
+
         private static System.ServiceModel.EndpointAddress GetEndpointAddress(EndpointConfiguration endpointConfiguration)
         {
             if ((endpointConfiguration == EndpointConfiguration.BasicHttpBinding_IService))
@@ -3992,20 +3992,20 @@ namespace ConligoOrderService
             }
             throw new System.InvalidOperationException(string.Format("Could not find endpoint with name \'{0}\'.", endpointConfiguration));
         }
-        
+
         private static System.ServiceModel.Channels.Binding GetDefaultBinding()
         {
             return ServiceClient.GetBindingForEndpoint(EndpointConfiguration.BasicHttpBinding_IService);
         }
-        
+
         private static System.ServiceModel.EndpointAddress GetDefaultEndpointAddress()
         {
             return ServiceClient.GetEndpointAddress(EndpointConfiguration.BasicHttpBinding_IService);
         }
-        
+
         public enum EndpointConfiguration
         {
-            
+
             BasicHttpBinding_IService,
         }
     }
