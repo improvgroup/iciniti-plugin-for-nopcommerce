@@ -4,13 +4,16 @@ using System.Linq;
 using System.Threading.Tasks;
 using ConligoOrderService;
 using Nop.Core;
+using Nop.Core.Domain.Common;
 using Nop.Core.Domain.Customers;
+using Nop.Core.Domain.Directory;
 using Nop.Core.Domain.Orders;
 using Nop.Services.Catalog;
 using Nop.Services.Common;
 using Nop.Services.Customers;
 using Nop.Services.Directory;
 using Nop.Services.Logging;
+using Nop.Services.Orders;
 
 namespace Nop.Plugin.Misc.ConligoSaveOrder.Services
 {
@@ -22,8 +25,12 @@ namespace Nop.Plugin.Misc.ConligoSaveOrder.Services
         #region Fields
 
         private readonly ConligoSaveOrderSettings _icinitiSaveOrderSettings;
+        private readonly IAddressService _addressService;
         private readonly ICurrencyService _currencyService;
         private readonly ICustomerService _customerService;
+        private readonly ICountryService _countryService;
+        private readonly IOrderService _orderService;
+        private readonly IStateProvinceService _stateProvinceService;
         private readonly IGenericAttributeService _genericAttributeService;
         private readonly ILogger _logger;
         private readonly IProductService _productService;
@@ -34,16 +41,24 @@ namespace Nop.Plugin.Misc.ConligoSaveOrder.Services
         #region Ctor
 
         public ConligoService(ConligoSaveOrderSettings icinitiSaveOrderSettings,
+            IAddressService addressService,
             ICurrencyService currencyService,
             ICustomerService customerService,
+            ICountryService countryService,
+            IOrderService orderService,
+            IStateProvinceService stateProvinceService,
             IGenericAttributeService genericAttributeService,
             ILogger logger,
             IProductService productService,
             IWorkContext workContext)
         {
             _icinitiSaveOrderSettings = icinitiSaveOrderSettings;
+            _addressService = addressService;
             _currencyService = currencyService;
             _customerService = customerService;
+            _countryService = countryService;
+            _orderService = orderService;
+            _stateProvinceService = stateProvinceService;
             _genericAttributeService = genericAttributeService;
             _logger = logger;
             _productService = productService;
@@ -61,14 +76,13 @@ namespace Nop.Plugin.Misc.ConligoSaveOrder.Services
         /// <returns>The asynchronous task whose result contains the authentication token</returns>
         private async Task<AuthToken> GetAuthTokenAsync(ConligoSaveOrderSettings settings = null)
         {
-            settings = settings ?? _icinitiSaveOrderSettings;
+            settings ??= _icinitiSaveOrderSettings;
 
             //initialize the service
-            using (var service = new ServiceClient(ServiceClient.EndpointConfiguration.BasicHttpBinding_IService, settings.ApiUrl))
-            {
-                //try to login with the saved credentials and get authentication token
-                return await service.LoginAsync(settings.LicenseKey, settings.CompanyName, settings.ContactName);
-            }
+            using var service = new ServiceClient(ServiceClient.EndpointConfiguration.BasicHttpBinding_IService, settings.ApiUrl);
+
+            //try to login with the saved credentials and get authentication token
+            return await service.LoginAsync(settings.LicenseKey, settings.CompanyName, settings.ContactName);
         }
 
         /// <summary>
@@ -80,11 +94,10 @@ namespace Nop.Plugin.Misc.ConligoSaveOrder.Services
         private async Task SaveOrderDetailsAsync(string token, APIOrder order)
         {
             //initialize the service
-            using (var service = new ServiceClient(ServiceClient.EndpointConfiguration.BasicHttpBinding_IService, _icinitiSaveOrderSettings.ApiUrl))
-            {
-                //save order details
-                await service.SaveOrderAsync(token, order);
-            }
+            using var service = new ServiceClient(ServiceClient.EndpointConfiguration.BasicHttpBinding_IService, _icinitiSaveOrderSettings.ApiUrl);
+
+            //save order details
+            await service.SaveOrderAsync(token, order);
         }
 
         /// <summary>
@@ -92,28 +105,31 @@ namespace Nop.Plugin.Misc.ConligoSaveOrder.Services
         /// </summary>
         /// <param name="apiHeader">Order header</param>
         /// <param name="order">Order</param>
-        private void PrepareOrderHeader(APIOrderHeader apiHeader, Order order)
+        private void PrepareOrderHeader(
+            APIOrderHeader apiHeader, Order order, Address shippingAddress, Country shippingCountry, StateProvince shippingStateProvince,
+            Address billingAddress, Country billingCountry, StateProvince billingStateProvince, Customer customer)
         {
-            var shippingAddress = order.ShippingAddress ?? order.PickupAddress ?? order.BillingAddress;
+            var orderNotes = _orderService.GetOrderNotesByOrderId(order.Id);
+            var orderItems = _orderService.GetOrderItems(order.Id);
 
             apiHeader.Id = Guid.NewGuid();
             apiHeader.LicenseKey = _icinitiSaveOrderSettings.LicenseKey;
             apiHeader.Status = 'N';
             apiHeader.AmountField = order.OrderTotal;
-            apiHeader.BillAddress1 = order.BillingAddress?.Address1;
-            apiHeader.BillAddress2 = order.BillingAddress?.Address2;
-            apiHeader.BillCity = order.BillingAddress?.City;
-            apiHeader.BillContact = $"{order.BillingAddress?.FirstName} {order.BillingAddress?.LastName}";
-            apiHeader.BillCountry = $"{order.Customer.BillingAddress?.Country?.Name}|{order.Customer.BillingAddress?.Country?.ThreeLetterIsoCode}";
-            apiHeader.BillState = $"{order.Customer.BillingAddress?.StateProvince?.Name}|{order.Customer.BillingAddress?.StateProvince?.Abbreviation}";
-            apiHeader.BillZip = order.BillingAddress?.ZipPostalCode;
-            apiHeader.ContactEmail = order.Customer.Email;
+            apiHeader.BillAddress1 = billingAddress?.Address1;
+            apiHeader.BillAddress2 = billingAddress?.Address2;
+            apiHeader.BillCity = billingAddress?.City;
+            apiHeader.BillContact = $"{billingAddress?.FirstName} {billingAddress?.LastName}";
+            apiHeader.BillCountry = $"{billingCountry?.Name}|{billingCountry?.ThreeLetterIsoCode}";
+            apiHeader.BillState = $"{billingStateProvince?.Name}|{billingStateProvince?.Abbreviation}";
+            apiHeader.BillZip = billingAddress?.ZipPostalCode;
+            apiHeader.ContactEmail = customer.Email;
             apiHeader.CurrencyCode = order.CustomerCurrencyCode;
-            apiHeader.CustomerCode = order.Customer.Id.ToString();
-            apiHeader.CustomerEmail = order.Customer.Email;
-            apiHeader.CustomerName = _customerService.GetCustomerFullName(order.Customer);
+            apiHeader.CustomerCode = customer.Id.ToString();
+            apiHeader.CustomerEmail = customer.Email;
+            apiHeader.CustomerName = _customerService.GetCustomerFullName(customer);
             apiHeader.DiscountLevel = order.OrderDiscount > 0 ? 1 : 0;
-            apiHeader.FaxNum = order.BillingAddress?.FaxNumber;
+            apiHeader.FaxNum = billingAddress?.FaxNumber;
             apiHeader.MiscCharge = 0;
             apiHeader.NumberOfOrders = 1;
             apiHeader.OnHold = false;
@@ -122,7 +138,7 @@ namespace Nop.Plugin.Misc.ConligoSaveOrder.Services
             apiHeader.OrderNumber = order.CustomOrderNumber;
             apiHeader.OrderTotal = order.OrderTotal;
             apiHeader.OrderType = "???";
-            apiHeader.PhoneNum = order.BillingAddress?.PhoneNumber;
+            apiHeader.PhoneNum = billingAddress?.PhoneNumber;
             apiHeader.PONumber = order.CustomOrderNumber;
             apiHeader.PriceList = "RETAIL";
             apiHeader.RequestedShipDate = apiHeader.OrderDate.Value.AddDays(7);
@@ -137,11 +153,11 @@ namespace Nop.Plugin.Misc.ConligoSaveOrder.Services
             apiHeader.ShipCity = shippingAddress?.City;
             apiHeader.ShipCode = order.ShippingMethod;
             apiHeader.ShipContact = $"{shippingAddress?.FirstName} {shippingAddress?.LastName}";
-            apiHeader.ShipCountry = $"{shippingAddress?.Country?.Name}|{shippingAddress?.Country?.ThreeLetterIsoCode}";
+            apiHeader.ShipCountry = $"{shippingCountry?.Name}|{shippingCountry?.ThreeLetterIsoCode}";
             apiHeader.ShipFax = shippingAddress?.FaxNumber;
             apiHeader.ShipPhone = shippingAddress?.PhoneNumber;
-            apiHeader.ShipState = $"{shippingAddress?.StateProvince?.Name}|{shippingAddress?.StateProvince?.Abbreviation}";
-            apiHeader.SpecialInstruction = order.OrderNotes.Aggregate(string.Empty, (message, note) => $"{message}{Environment.NewLine}{note.Note}");
+            apiHeader.ShipState = $"{shippingStateProvince?.Name}|{shippingStateProvince?.Abbreviation}";
+            apiHeader.SpecialInstruction = orderNotes.Aggregate(string.Empty, (message, note) => $"{message}{Environment.NewLine}{note.Note}");
             apiHeader.SubTotal = order.OrderSubtotalExclTax;
             apiHeader.Tax1 = order.OrderTax;
             apiHeader.Tax2 = 0;
@@ -155,7 +171,7 @@ namespace Nop.Plugin.Misc.ConligoSaveOrder.Services
             apiHeader.TaxStatus4 = 0;
             apiHeader.TaxStatus5 = 0;
             apiHeader.TotalDiscountAmount = order.OrderDiscount;
-            apiHeader.TotalItems = order.OrderItems.Count;
+            apiHeader.TotalItems = orderItems.Count;
             apiHeader.TotalShippingAmount = order.OrderShippingExclTax;
             apiHeader.TotalTax = order.OrderTax;
         }
@@ -166,32 +182,34 @@ namespace Nop.Plugin.Misc.ConligoSaveOrder.Services
         /// <param name="apiCustomer">Order customer</param>
         /// <param name="order">Order</param>
         /// <param name="headerId">Order header id</param>
-        private void PrepareOrderCustomer(APICustomer apiCustomer, Order order, Guid headerId)
+        private void PrepareOrderCustomer(
+            APICustomer apiCustomer, Guid headerId, Address billingAddress, 
+            Country billingCountry, StateProvince billingStateProvince, Customer customer)
         {
             apiCustomer.Id = Guid.NewGuid();
             apiCustomer.HeaderId = headerId;
-            apiCustomer.AccountSetCode = order.Customer.Id.ToString();
+            apiCustomer.AccountSetCode = customer.Id.ToString();
             apiCustomer.AccountType = 0;
-            apiCustomer.BillingAddrCity = order.Customer.BillingAddress?.City;
-            apiCustomer.BillingAddrCountryName = $"{order.Customer.BillingAddress?.Country?.Name}|{order.Customer.BillingAddress?.Country?.ThreeLetterIsoCode}";
-            apiCustomer.BillingAddrLine1 = order.Customer.BillingAddress?.Address1;
-            apiCustomer.BillingAddrLine2 = order.Customer.BillingAddress?.Address2;
-            apiCustomer.BillingAddrPostalCode = order.Customer.BillingAddress?.ZipPostalCode;
-            apiCustomer.BillingAddrStateName = $"{order.Customer.BillingAddress?.StateProvince?.Name}|{order.Customer.BillingAddress?.StateProvince?.Abbreviation}";
-            apiCustomer.BillingContactName = _customerService.GetCustomerFullName(order.Customer);
-            apiCustomer.BillingFaxNumber = order.Customer.BillingAddress?.FaxNumber;
-            apiCustomer.BillingTelNumber = order.Customer.BillingAddress?.PhoneNumber;
-            apiCustomer.ContactEmail = order.Customer.Email;
-            apiCustomer.ContactFax = order.Customer.BillingAddress?.FaxNumber;
-            apiCustomer.ContactPhone = order.Customer.BillingAddress?.PhoneNumber;
+            apiCustomer.BillingAddrCity = billingAddress?.City;
+            apiCustomer.BillingAddrCountryName = $"{billingCountry?.Name}|{billingCountry?.ThreeLetterIsoCode}";
+            apiCustomer.BillingAddrLine1 = billingAddress?.Address1;
+            apiCustomer.BillingAddrLine2 = billingAddress?.Address2;
+            apiCustomer.BillingAddrPostalCode = billingAddress?.ZipPostalCode;
+            apiCustomer.BillingAddrStateName = $"{billingStateProvince?.Name}|{billingStateProvince?.Abbreviation}";
+            apiCustomer.BillingContactName = _customerService.GetCustomerFullName(customer);
+            apiCustomer.BillingFaxNumber = billingAddress?.FaxNumber;
+            apiCustomer.BillingTelNumber = billingAddress?.PhoneNumber;
+            apiCustomer.ContactEmail = customer.Email;
+            apiCustomer.ContactFax = billingAddress?.FaxNumber;
+            apiCustomer.ContactPhone = billingAddress?.PhoneNumber;
             apiCustomer.CreditLimit = 0;
-            apiCustomer.CurrencyCode = _currencyService.GetCurrencyById(_genericAttributeService.GetAttribute<int>(order.Customer, NopCustomerDefaults.CurrencyIdAttribute))?.CurrencyCode;
-            apiCustomer.CustomerCode = order.Customer.Id.ToString();
-            apiCustomer.CustomerEmail = order.Customer.Email;
-            apiCustomer.CustomerName = _customerService.GetCustomerFullName(order.Customer);
-            apiCustomer.CustomerShortName = order.Customer.Username;
-            apiCustomer.GroupCode = order.Customer.AffiliateId.ToString();
-            apiCustomer.IsActive = order.Customer.Active ? (short)1 : (short)0;
+            apiCustomer.CurrencyCode = _currencyService.GetCurrencyById(_genericAttributeService.GetAttribute<int>(customer, NopCustomerDefaults.CurrencyIdAttribute))?.CurrencyCode;
+            apiCustomer.CustomerCode = customer.Id.ToString();
+            apiCustomer.CustomerEmail = customer.Email;
+            apiCustomer.CustomerName = _customerService.GetCustomerFullName(customer);
+            apiCustomer.CustomerShortName = customer.Username;
+            apiCustomer.GroupCode = customer.AffiliateId.ToString();
+            apiCustomer.IsActive = customer.Active ? (short)1 : (short)0;
             apiCustomer.IsOnHold = 0;
             apiCustomer.Options = new List<APIOptionalField>();
             apiCustomer.PartShip = 0;
@@ -203,13 +221,13 @@ namespace Nop.Plugin.Misc.ConligoSaveOrder.Services
             apiCustomer.SalesSplitPercentage4 = 0;
             apiCustomer.SalesSplitPercentage5 = 0;
             apiCustomer.ShopOnWeb = 1;
-            apiCustomer.TaxClassCode1 = order.Customer.IsTaxExempt ? 0 : 1;
+            apiCustomer.TaxClassCode1 = customer.IsTaxExempt ? 0 : 1;
             apiCustomer.TaxClassCode2 = 0;
             apiCustomer.TaxClassCode3 = 0;
             apiCustomer.TaxClassCode4 = 0;
             apiCustomer.TaxClassCode5 = 0;
-            apiCustomer.TaxGroupCode = order.Customer.IsTaxExempt ? "EXEMPT" : "TAX";
-            apiCustomer.TaxRegistrationNo1 = _genericAttributeService.GetAttribute<string>(order.Customer, NopCustomerDefaults.VatNumberAttribute);
+            apiCustomer.TaxGroupCode = customer.IsTaxExempt ? "EXEMPT" : "TAX";
+            apiCustomer.TaxRegistrationNo1 = _genericAttributeService.GetAttribute<string>(customer, NopCustomerDefaults.VatNumberAttribute);
         }
 
         /// <summary>
@@ -218,25 +236,27 @@ namespace Nop.Plugin.Misc.ConligoSaveOrder.Services
         /// <param name="apiShipTo">Order address</param>
         /// <param name="order">Order</param>
         /// <param name="headerId">Order header id</param>
-        private void PrepareOrderAddress(APIAddress apiShipTo, Order order, Guid headerId)
+        private void PrepareOrderAddress(
+            APIAddress apiShipTo, Order order, Guid headerId, Address shippingAddress, 
+            Country shippingCountry, StateProvince shippingStateProvince, Customer customer)
         {
-            var shippingAddress = order.ShippingAddress ?? order.PickupAddress ?? order.BillingAddress;
+            var orderNotes = _orderService.GetOrderNotesByOrderId(order.Id);
 
             apiShipTo.Id = Guid.NewGuid();
             apiShipTo.HeaderId = headerId;
             apiShipTo.IsActive = 1;
             apiShipTo.AddrCity = shippingAddress?.City;
-            apiShipTo.AddrCountryName = $"{shippingAddress?.Country?.Name}|{shippingAddress?.Country?.ThreeLetterIsoCode}";
+            apiShipTo.AddrCountryName = $"{shippingCountry?.Name}|{shippingCountry?.ThreeLetterIsoCode}";
             apiShipTo.AddrLine1 = shippingAddress?.Address1;
             apiShipTo.AddrLine2 = shippingAddress?.Address2;
             apiShipTo.AddrPostalCode = shippingAddress?.ZipPostalCode;
-            apiShipTo.AddrStateName = $"{shippingAddress?.StateProvince?.Name}|{shippingAddress?.StateProvince?.Abbreviation}";
-            apiShipTo.ContactEmail = order.Customer.Email;
+            apiShipTo.AddrStateName = $"{shippingStateProvince?.Name}|{shippingStateProvince?.Abbreviation}";
+            apiShipTo.ContactEmail = customer.Email;
             apiShipTo.ContactFax = shippingAddress?.FaxNumber;
             apiShipTo.ContactName = $"{shippingAddress?.FirstName} {shippingAddress?.LastName}";
             apiShipTo.ContactPhone = shippingAddress?.PhoneNumber;
-            apiShipTo.CustomerCode = order.Customer.Username;
-            apiShipTo.CustomerEmail = order.Customer.Email;
+            apiShipTo.CustomerCode = customer.Username;
+            apiShipTo.CustomerEmail = customer.Email;
             apiShipTo.FaxNumber = shippingAddress?.FaxNumber;
             apiShipTo.Fob = shippingAddress?.City;
             apiShipTo.IsActive = 1;
@@ -249,9 +269,9 @@ namespace Nop.Plugin.Misc.ConligoSaveOrder.Services
             apiShipTo.SalesSplitPercentage3 = 0;
             apiShipTo.SalesSplitPercentage4 = 0;
             apiShipTo.SalesSplitPercentage5 = 0;
-            apiShipTo.SpecialInstructions = order.OrderNotes.Aggregate(string.Empty, (message, note) => $"{message}{Environment.NewLine}{note.Note}");
+            apiShipTo.SpecialInstructions = orderNotes.Aggregate(string.Empty, (message, note) => $"{message}{Environment.NewLine}{note.Note}");
             apiShipTo.TaxClassCode1 = order.TaxRates;
-            apiShipTo.TaxGroupCode = order.Customer.IsTaxExempt ? "EXEMPT" : string.Empty;
+            apiShipTo.TaxGroupCode = customer.IsTaxExempt ? "EXEMPT" : string.Empty;
             apiShipTo.TaxRegistrationNo1 = !string.IsNullOrEmpty(order.VatNumber) ? $"VatNumber: {order.VatNumber}" : string.Empty;
             apiShipTo.TelNumber = shippingAddress?.PhoneNumber;
             apiShipTo.WarehouseLocationCode = $"StoreId: {order.StoreId}";
@@ -265,10 +285,11 @@ namespace Nop.Plugin.Misc.ConligoSaveOrder.Services
         /// <param name="headerId">Order header id</param>
         private void PrepareOrderDetails(List<APIDetail> apiDetails, Order order, Guid headerId)
         {
-            var orderItems = order.OrderItems.ToList();
+            var orderItems = _orderService.GetOrderItems(order.Id);
             for (var i = 0; i < orderItems.Count; i++)
             {
                 var item = orderItems[i];
+                var product = _productService.GetProductById(item.ProductId);
                 apiDetails.Add(new APIDetail()
                 {
                     MiscCharge = null,
@@ -276,8 +297,8 @@ namespace Nop.Plugin.Misc.ConligoSaveOrder.Services
                     {
                         Id = Guid.NewGuid(),
                         HeaderId = headerId,
-                        ItemCode = _productService.FormatSku(item.Product, item.AttributesXml),
-                        ItemDescription = item.Product?.Name,
+                        ItemCode = _productService.FormatSku(product, item.AttributesXml),
+                        ItemDescription = product?.Name,
                         ItemDiscount = item.DiscountAmountExclTax,
                         ItemExtDiscount = item.DiscountAmountExclTax * item.Quantity,
                         ItemLineNumber = i + 1,
@@ -348,7 +369,7 @@ namespace Nop.Plugin.Misc.ConligoSaveOrder.Services
                 if (order == null)
                     throw new NopException("Unable to load order");
 
-                if (order.Customer == null)
+                if (_customerService.GetCustomerById(order.CustomerId) == null)
                     throw new NopException("Unable to load customer");
 
                 _logger.Information($"Conligo Plugin. Saving Order: {order.CustomOrderNumber}", customer: _workContext.CurrentCustomer);
@@ -360,19 +381,49 @@ namespace Nop.Plugin.Misc.ConligoSaveOrder.Services
                 else
                     _logger.Information($"Conligo Plugin. Authentication Failed -> Order: {order.CustomOrderNumber}", customer: _workContext.CurrentCustomer);
 
+                var billingAddress = _addressService.GetAddressById(order.BillingAddressId);
+                var billingCountry = _countryService.GetCountryById(billingAddress.CountryId ?? 0);
+                var billingStateProvince = _stateProvinceService.GetStateProvinceById(billingAddress.StateProvinceId ?? 0);
+
+                // get available shipping address
+                Address shippingAddress = null;
+                Country shippingCountry = null;
+                StateProvince shippingStateProvince = null;
+
+                if (order.PickupInStore && order.PickupAddressId.HasValue)
+                    shippingAddress = _addressService.GetAddressById(order.PickupAddressId.Value);
+
+                if (shippingAddress == null && order.ShippingAddressId.HasValue)
+                    shippingAddress = _addressService.GetAddressById(order.ShippingAddressId.Value);
+
+                if (shippingAddress == null)
+                {
+                    shippingAddress = billingAddress;
+                    shippingCountry = billingCountry;
+                    shippingStateProvince = billingStateProvince;
+                }
+                else
+                {
+                    shippingCountry = _countryService.GetCountryById(shippingAddress.CountryId ?? 0);
+                    shippingStateProvince = _stateProvinceService.GetStateProvinceById(shippingAddress.StateProvinceId ?? 0);
+                }
+
+                var customer = _customerService.GetCustomerById(order.CustomerId);
+
                 //prepare order details
                 var apiOrder = new APIOrder();
 
                 var apiHeader = new APIOrderHeader();
-                PrepareOrderHeader(apiHeader, order);
+                PrepareOrderHeader(apiHeader, order, shippingAddress, shippingCountry, shippingStateProvince, 
+                    billingAddress, billingCountry, billingStateProvince, customer);
                 apiOrder.Header = apiHeader;
 
                 var apiCustomer = new APICustomer();
-                PrepareOrderCustomer(apiCustomer, order, apiHeader.Id);
+                PrepareOrderCustomer(apiCustomer, apiHeader.Id, billingAddress, billingCountry, billingStateProvince, customer);
                 apiOrder.Customer = apiCustomer;
 
                 var apiShipTo = new APIAddress();
-                PrepareOrderAddress(apiShipTo, order, apiHeader.Id);
+                PrepareOrderAddress(apiShipTo, order, apiHeader.Id, shippingAddress, shippingCountry, shippingStateProvince, customer);
                 apiOrder.ShipTo = apiShipTo;
 
                 var apiDetails = new List<APIDetail>();

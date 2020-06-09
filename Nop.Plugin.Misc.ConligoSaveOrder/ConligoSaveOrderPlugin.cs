@@ -1,4 +1,5 @@
-﻿using Nop.Core;
+﻿using System.Collections.Generic;
+using Nop.Core;
 using Nop.Services.Common;
 using Nop.Services.Configuration;
 using Nop.Services.Localization;
@@ -55,16 +56,19 @@ namespace Nop.Plugin.Misc.ConligoSaveOrder
             });
 
             //locales
-            _localizationService.AddOrUpdatePluginLocaleResource("Plugins.Misc.ConligoSaveOrder.Configuration", "Configuration");
-            _localizationService.AddOrUpdatePluginLocaleResource("Plugins.Misc.ConligoSaveOrder.Fields.ApiUrl", "API URL");
-            _localizationService.AddOrUpdatePluginLocaleResource("Plugins.Misc.ConligoSaveOrder.Fields.ApiUrl.Hint", "Do not change this value unless you are told to do so by an Conligo support representative.");
-            _localizationService.AddOrUpdatePluginLocaleResource("Plugins.Misc.ConligoSaveOrder.Fields.CompanyName", "Company Name");
-            _localizationService.AddOrUpdatePluginLocaleResource("Plugins.Misc.ConligoSaveOrder.Fields.CompanyName.Hint", "Enter the company name exactly as it appears in the e-mail notification you should have received");
-            _localizationService.AddOrUpdatePluginLocaleResource("Plugins.Misc.ConligoSaveOrder.Fields.ContactName", "Contact Name");
-            _localizationService.AddOrUpdatePluginLocaleResource("Plugins.Misc.ConligoSaveOrder.Fields.ContactName.Hint", "Enter the contact name exactly as it appears in the e-mail notification you should have received.");
-            _localizationService.AddOrUpdatePluginLocaleResource("Plugins.Misc.ConligoSaveOrder.Fields.LicenseKey", "License Key");
-            _localizationService.AddOrUpdatePluginLocaleResource("Plugins.Misc.ConligoSaveOrder.Fields.LicenseKey.Hint", "Enter the license key exactly as it appears in the e-mail notification you should have received.");
-            _localizationService.AddOrUpdatePluginLocaleResource("Plugins.Misc.ConligoSaveOrder.Test", "Test Settings");
+            _localizationService.AddPluginLocaleResource(new Dictionary<string, string>
+            {
+                ["Plugins.Misc.ConligoSaveOrder.Configuration"] = "Configuration",
+                ["Plugins.Misc.ConligoSaveOrder.Fields.ApiUrl"] = "API URL",
+                ["Plugins.Misc.ConligoSaveOrder.Fields.ApiUrl.Hint"] = "Do not change this value unless you are told to do so by an Conligo support representative.",
+                ["Plugins.Misc.ConligoSaveOrder.Fields.CompanyName"] = "Company Name",
+                ["Plugins.Misc.ConligoSaveOrder.Fields.CompanyName.Hint"] = "Enter the company name exactly as it appears in the e-mail notification you should have received",
+                ["Plugins.Misc.ConligoSaveOrder.Fields.ContactName"] = "Contact Name",
+                ["Plugins.Misc.ConligoSaveOrder.Fields.ContactName.Hint"] = "Enter the contact name exactly as it appears in the e-mail notification you should have received.",
+                ["Plugins.Misc.ConligoSaveOrder.Fields.LicenseKey"] = "License Key",
+                ["Plugins.Misc.ConligoSaveOrder.Fields.LicenseKey.Hint"] = "Enter the license key exactly as it appears in the e-mail notification you should have received.",
+                ["Plugins.Misc.ConligoSaveOrder.Test"] = "Test Settings"
+            });
 
             base.Install();
         }
@@ -76,16 +80,7 @@ namespace Nop.Plugin.Misc.ConligoSaveOrder
         {
             _settingService.DeleteSetting<ConligoSaveOrderSettings>();
 
-            _localizationService.DeletePluginLocaleResource("Plugins.Misc.ConligoSaveOrder.Configuration");
-            _localizationService.DeletePluginLocaleResource("Plugins.Misc.ConligoSaveOrder.Fields.ApiUrl");
-            _localizationService.DeletePluginLocaleResource("Plugins.Misc.ConligoSaveOrder.Fields.ApiUrl.Hint");
-            _localizationService.DeletePluginLocaleResource("Plugins.Misc.ConligoSaveOrder.Fields.CompanyName");
-            _localizationService.DeletePluginLocaleResource("Plugins.Misc.ConligoSaveOrder.Fields.CompanyName.Hint");
-            _localizationService.DeletePluginLocaleResource("Plugins.Misc.ConligoSaveOrder.Fields.ContactName");
-            _localizationService.DeletePluginLocaleResource("Plugins.Misc.ConligoSaveOrder.Fields.ContactName.Hint");
-            _localizationService.DeletePluginLocaleResource("Plugins.Misc.ConligoSaveOrder.Fields.LicenseKey");
-            _localizationService.DeletePluginLocaleResource("Plugins.Misc.ConligoSaveOrder.Fields.LicenseKey.Hint");
-            _localizationService.DeletePluginLocaleResource("Plugins.Misc.ConligoSaveOrder.Test");
+            _localizationService.DeletePluginLocaleResources("Plugins.Misc.ConligoSaveOrder");
 
             base.Uninstall();
         }

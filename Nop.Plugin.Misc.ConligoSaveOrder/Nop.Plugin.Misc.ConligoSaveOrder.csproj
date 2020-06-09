@@ -1,11 +1,12 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netcoreapp2.2</TargetFramework>
-    <Copyright>Copyright ©2019 Conligo</Copyright>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <Copyright>Copyright ©2020 Conligo</Copyright>
     <Company>Conligo</Company>
     <Authors>Conligo, Nop Solutions, Ltd</Authors>
     <PackageLicenseUrl></PackageLicenseUrl>
+    <PackageProjectUrl>https://www.nopcommerce.com/conligo</PackageProjectUrl>
     <RepositoryUrl>https://github.com/nopSolutions/iciniti-plugin-for-nopcommerce</RepositoryUrl>
     <RepositoryType>Git</RepositoryType>
     <OutputPath>..\..\Presentation\Nop.Web\Plugins\Misc.ConligoSaveOrder</OutputPath>

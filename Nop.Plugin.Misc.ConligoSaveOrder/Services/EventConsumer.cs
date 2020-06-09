@@ -10,15 +10,15 @@ namespace Nop.Plugin.Misc.ConligoSaveOrder.Services
     {
         #region Fields
 
-        private readonly ConligoService _icinitiService;
+        private readonly ConligoService _conligoService;
 
         #endregion
 
         #region Ctor
 
-        public EventConsumer(ConligoService icinitiService)
+        public EventConsumer(ConligoService conligoService)
         {
-            _icinitiService = icinitiService;
+            _conligoService = conligoService;
         }
 
         #endregion
@@ -32,7 +32,7 @@ namespace Nop.Plugin.Misc.ConligoSaveOrder.Services
         public void HandleEvent(OrderPlacedEvent eventMessage)
         {
             //handle event
-            _icinitiService.HandleOrderPlacedEvent(eventMessage.Order);
+            _conligoService.HandleOrderPlacedEvent(eventMessage.Order);
         }
 
         #endregion
