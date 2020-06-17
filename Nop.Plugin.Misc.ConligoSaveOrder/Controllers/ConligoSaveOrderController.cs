@@ -16,7 +16,7 @@ namespace Nop.Plugin.Misc.ConligoSaveOrder.Controllers
     {
         #region Fields
 
-        private readonly ConligoService _icinitiService;
+        private readonly ConligoService _conligoService;
         private readonly IGenericAttributeService _genericAttributeService;
         private readonly ILocalizationService _localizationService;
         private readonly INotificationService _notificationService;
@@ -28,7 +28,7 @@ namespace Nop.Plugin.Misc.ConligoSaveOrder.Controllers
 
         #region Ctor
 
-        public ConligoSaveOrderController(ConligoService icinitiService,
+        public ConligoSaveOrderController(ConligoService conligoService,
             IGenericAttributeService genericAttributeService,
             ILocalizationService localizationService,
             INotificationService notificationService,
@@ -36,7 +36,7 @@ namespace Nop.Plugin.Misc.ConligoSaveOrder.Controllers
             IStoreContext storeContext,
             IWorkContext workContext)
         {
-            _icinitiService = icinitiService;
+            _conligoService = conligoService;
             _genericAttributeService = genericAttributeService;
             _localizationService = localizationService;
             _notificationService = notificationService;
@@ -55,15 +55,15 @@ namespace Nop.Plugin.Misc.ConligoSaveOrder.Controllers
         {
             //load settings for active store scope
             var storeId = _storeContext.ActiveStoreScopeConfiguration;
-            var icinitiSettings = _settingService.LoadSetting<ConligoSaveOrderSettings>(storeId);
+            var conligoSettings = _settingService.LoadSetting<ConligoSaveOrderSettings>(storeId);
 
             //prepare model
             var model = new ConfigurationModel
             {
-                ApiUrl = icinitiSettings.ApiUrl,
-                LicenseKey = icinitiSettings.LicenseKey,
-                CompanyName = icinitiSettings.CompanyName,
-                ContactName = icinitiSettings.ContactName,
+                ApiUrl = conligoSettings.ApiUrl,
+                LicenseKey = conligoSettings.LicenseKey,
+                CompanyName = conligoSettings.CompanyName,
+                ContactName = conligoSettings.ContactName,
                 ActiveStoreScopeConfiguration = storeId
             };
 
@@ -74,17 +74,17 @@ namespace Nop.Plugin.Misc.ConligoSaveOrder.Controllers
             //overridable settings
             if (storeId > 0)
             {
-                model.ApiUrl_OverrideForStore = _settingService.SettingExists(icinitiSettings, settings => settings.ApiUrl, storeId);
-                model.LicenseKey_OverrideForStore = _settingService.SettingExists(icinitiSettings, settings => settings.LicenseKey, storeId);
-                model.CompanyName_OverrideForStore = _settingService.SettingExists(icinitiSettings, settings => settings.CompanyName, storeId);
-                model.ContactName_OverrideForStore = _settingService.SettingExists(icinitiSettings, settings => settings.ContactName, storeId);
+                model.ApiUrl_OverrideForStore = _settingService.SettingExists(conligoSettings, settings => settings.ApiUrl, storeId);
+                model.LicenseKey_OverrideForStore = _settingService.SettingExists(conligoSettings, settings => settings.LicenseKey, storeId);
+                model.CompanyName_OverrideForStore = _settingService.SettingExists(conligoSettings, settings => settings.CompanyName, storeId);
+                model.ContactName_OverrideForStore = _settingService.SettingExists(conligoSettings, settings => settings.ContactName, storeId);
             }
 
             //whether plugin is configured
-            model.IsConfigured = !string.IsNullOrEmpty(icinitiSettings.ApiUrl)
-                && !string.IsNullOrEmpty(icinitiSettings.LicenseKey)
-                && !string.IsNullOrEmpty(icinitiSettings.CompanyName)
-                && !string.IsNullOrEmpty(icinitiSettings.ContactName);
+            model.IsConfigured = !string.IsNullOrEmpty(conligoSettings.ApiUrl)
+                && !string.IsNullOrEmpty(conligoSettings.LicenseKey)
+                && !string.IsNullOrEmpty(conligoSettings.CompanyName)
+                && !string.IsNullOrEmpty(conligoSettings.ContactName);
 
             return View("~/Plugins/Misc.ConligoSaveOrder/Views/Configure.cshtml", model);
         }
@@ -100,21 +100,21 @@ namespace Nop.Plugin.Misc.ConligoSaveOrder.Controllers
 
             //load settings for active store scope
             var storeId = _storeContext.ActiveStoreScopeConfiguration;
-            var icinitiSettings = _settingService.LoadSetting<ConligoSaveOrderSettings>(storeId);
+            var conligoSettings = _settingService.LoadSetting<ConligoSaveOrderSettings>(storeId);
 
             //save settings
-            icinitiSettings.ApiUrl = model.ApiUrl;
-            icinitiSettings.LicenseKey = model.LicenseKey;
-            icinitiSettings.CompanyName = model.CompanyName;
-            icinitiSettings.ContactName = model.ContactName;
+            conligoSettings.ApiUrl = model.ApiUrl;
+            conligoSettings.LicenseKey = model.LicenseKey;
+            conligoSettings.CompanyName = model.CompanyName;
+            conligoSettings.ContactName = model.ContactName;
 
             /* We do not clear cache after each setting update.
              * This behavior can increase performance because cached settings will not be cleared 
              * and loaded from database after each update */
-            _settingService.SaveSettingOverridablePerStore(icinitiSettings, settings => settings.ApiUrl, model.ApiUrl_OverrideForStore, storeId, false);
-            _settingService.SaveSettingOverridablePerStore(icinitiSettings, settings => settings.LicenseKey, model.LicenseKey_OverrideForStore, storeId, false);
-            _settingService.SaveSettingOverridablePerStore(icinitiSettings, settings => settings.CompanyName, model.CompanyName_OverrideForStore, storeId, false);
-            _settingService.SaveSettingOverridablePerStore(icinitiSettings, settings => settings.ContactName, model.ContactName_OverrideForStore, storeId, false);
+            _settingService.SaveSettingOverridablePerStore(conligoSettings, settings => settings.ApiUrl, model.ApiUrl_OverrideForStore, storeId, false);
+            _settingService.SaveSettingOverridablePerStore(conligoSettings, settings => settings.LicenseKey, model.LicenseKey_OverrideForStore, storeId, false);
+            _settingService.SaveSettingOverridablePerStore(conligoSettings, settings => settings.CompanyName, model.CompanyName_OverrideForStore, storeId, false);
+            _settingService.SaveSettingOverridablePerStore(conligoSettings, settings => settings.ContactName, model.ContactName_OverrideForStore, storeId, false);
 
             //now clear settings cache
             _settingService.ClearCache();
@@ -135,9 +135,9 @@ namespace Nop.Plugin.Misc.ConligoSaveOrder.Controllers
 
             //load settings for active store scope
             var storeId = _storeContext.ActiveStoreScopeConfiguration;
-            var icinitiSettings = _settingService.LoadSetting<ConligoSaveOrderSettings>(storeId);
+            var conligoSettings = _settingService.LoadSetting<ConligoSaveOrderSettings>(storeId);
 
-            var (isValid, message) = _icinitiService.VerifyCredentials(icinitiSettings);
+            var (isValid, message) = _conligoService.VerifyCredentials(conligoSettings);
             if (isValid)
                 _notificationService.SuccessNotification(message);
             else

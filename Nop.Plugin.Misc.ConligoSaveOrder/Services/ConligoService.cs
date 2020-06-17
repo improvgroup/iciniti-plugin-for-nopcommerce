@@ -24,7 +24,7 @@ namespace Nop.Plugin.Misc.ConligoSaveOrder.Services
     {
         #region Fields
 
-        private readonly ConligoSaveOrderSettings _icinitiSaveOrderSettings;
+        private readonly ConligoSaveOrderSettings _conligoSettings;
         private readonly IAddressService _addressService;
         private readonly ICurrencyService _currencyService;
         private readonly ICustomerService _customerService;
@@ -40,7 +40,7 @@ namespace Nop.Plugin.Misc.ConligoSaveOrder.Services
 
         #region Ctor
 
-        public ConligoService(ConligoSaveOrderSettings icinitiSaveOrderSettings,
+        public ConligoService(ConligoSaveOrderSettings conligoSettings,
             IAddressService addressService,
             ICurrencyService currencyService,
             ICustomerService customerService,
@@ -52,7 +52,7 @@ namespace Nop.Plugin.Misc.ConligoSaveOrder.Services
             IProductService productService,
             IWorkContext workContext)
         {
-            _icinitiSaveOrderSettings = icinitiSaveOrderSettings;
+            _conligoSettings = conligoSettings;
             _addressService = addressService;
             _currencyService = currencyService;
             _customerService = customerService;
@@ -76,7 +76,7 @@ namespace Nop.Plugin.Misc.ConligoSaveOrder.Services
         /// <returns>The asynchronous task whose result contains the authentication token</returns>
         private async Task<AuthToken> GetAuthTokenAsync(ConligoSaveOrderSettings settings = null)
         {
-            settings ??= _icinitiSaveOrderSettings;
+            settings ??= _conligoSettings;
 
             //initialize the service
             using var service = new ServiceClient(ServiceClient.EndpointConfiguration.BasicHttpBinding_IService, settings.ApiUrl);
@@ -94,7 +94,7 @@ namespace Nop.Plugin.Misc.ConligoSaveOrder.Services
         private async Task SaveOrderDetailsAsync(string token, APIOrder order)
         {
             //initialize the service
-            using var service = new ServiceClient(ServiceClient.EndpointConfiguration.BasicHttpBinding_IService, _icinitiSaveOrderSettings.ApiUrl);
+            using var service = new ServiceClient(ServiceClient.EndpointConfiguration.BasicHttpBinding_IService, _conligoSettings.ApiUrl);
 
             //save order details
             await service.SaveOrderAsync(token, order);
@@ -113,7 +113,7 @@ namespace Nop.Plugin.Misc.ConligoSaveOrder.Services
             var orderItems = _orderService.GetOrderItems(order.Id);
 
             apiHeader.Id = Guid.NewGuid();
-            apiHeader.LicenseKey = _icinitiSaveOrderSettings.LicenseKey;
+            apiHeader.LicenseKey = _conligoSettings.LicenseKey;
             apiHeader.Status = 'N';
             apiHeader.AmountField = order.OrderTotal;
             apiHeader.BillAddress1 = billingAddress?.Address1;
